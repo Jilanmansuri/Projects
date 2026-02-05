@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JioTV Kids Section</title>
+     <link rel="icon" type="image/png" href="https://cdn6.aptoide.com/imgs/b/c/3/bc3124bbcbf3e95b8efe5df814fadab2_icon.png">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff;
+            color: #222;
+        }
+
+
+        .navbar {
+            width: 100%;
+            background: #aa0023;
+            /* deep red similar to JioTV */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.6rem 0;
+        }
+
+        .nav-inner {
+            width: 92%;
+            display: flex;
+            /* flex only */
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        /* left side: logo + menu */
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+        }
+
+        /* PNG logo */
+        .logo {
+            height: 2.2rem;
+            width: auto;
+            display: block;
+            margin-left: 0.2rem;
+        }
+
+        /* main menu links */
+        .main-menu {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        /* menu link style */
+        .menu-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.25rem 0;
+            position: relative;
+        }
+
+        /* underline for active (For You) */
+        .menu-link.active {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .menu-link.active::after {
+            content: "";
+            height: 0.18rem;
+            width: 1.6rem;
+            background: #f2f2f2;
+            position: absolute;
+            left: 0;
+            bottom: -0.4rem;
+            border-radius: 0.08rem;
+        }
+
+        .main-menu a:hover {
+            text-decoration: underline;
+        }
+
+        /* right side: search + profile */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* search wrapper */
+        .search-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 0.25rem;
+            border-radius: 2.4rem;
+            color: white;
+        }
+
+        /* search icon & mic button */
+        .icon-btn {
+            background: transparent;
+            border: none;
+            padding: 0.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .icon-btn img {
+            height: 1.2rem;
+            width: auto;
+            display: block;
+
+            /* white icons */
+        }
+
+        /* search input */
+        .search-input {
+            min-width: 18vw;
+            max-width: 36rem;
+            width: 22vw;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 0.95rem;
+            padding: 0.2rem 0.4rem;
+        }
+
+        /* profile button */
+        .profile-btn {
+            height: 2.2rem;
+            width: 2.2rem;
+            border-radius: 50%;
+            border: none;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .profile-btn img {
+            height: 2.2rem;
+
+
+            border-radius: 50%;
+        }
+
+
+        h2 {
+            margin: 0;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: #c2002f;
+        }
+
+        .kids-container {
+            padding: 20px;
+            width: 80vw;
+            margin: auto;
+        }
+
+        .kids-section {
+            margin-bottom: 40px;
+        }
+
+        .kids-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #d1001f;
+        }
+
+        /* Horizontal scroll row */
+        .scroll-row {
+            display: flex;
+            gap: 15px;
+            flex-wrap: nowrap;
+
+            overflow-x: scroll;
+            
+            scroll-behavior: smooth;
+
+        }
+
+        .scroll-row::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .scroll-row::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+
+        .scroll-row::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .scroll-row::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .card {
+            background: #f7f7f7;
+            border-radius: 10px;
+
+            width: 330px;
+            height: 180px;
+
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+
+
+
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 330px;
+            height: 180px;
+            border-radius: 10px;
+            display: block;
+        }
+
+
+
+        /* ===== Responsive Breakpoints ===== */
+
+        /* Mobile (max 576px): 2 per row */
+        @media (max-width: 576px) {
+            .card {
+                flex: 0 0 45%;
+            }
+
+            .kids-section h2 {
+                font-size: 1.1rem;
+                text-align: center;
+            }
+
+            .card p {
+                font-size: 0.85rem;
+            }
+
+            .nav-inner {
+                width: 98%;
+                padding: 0 0.2rem;
+            }
+
+            .main-menu {
+                display: none;
+            }
+
+            /* hide full menu on small screens */
+            .search-input {
+                display: none;
+            }
+
+            .hello {
+                display: flex;
+                background-color: #aa0023;
+
+                gap: 0.5em;
+                justify-content: center;
+
+            }
+
+            .hello a {
+                font-size: 0.6em;
+            }
+
+            /* compact: hide input on very small screens */
+            .logo {
+                height: 2rem;
+                margin-left: 0;
+            }
+
+            .search-wrap {
+                padding: 0.15rem;
+                border-radius: 2rem;
+            }
+        }
+
+        /* Tablet (577px–768px): 3 per row */
+        @media (min-width: 577px) and (max-width: 768px) {
+            .card {
+                flex: 0 0 30%;
+            }
+
+            .kids-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .nav-inner {
+                width: 94%;
+            }
+
+            .hello {
+                display: none;
+            }
+
+            .logo {
+                height: 2.4rem;
+            }
+
+            .menu-link {
+                font-size: 0.98rem;
+            }
+
+            .search-input {
+                width: 26vw;
+                min-width: 10rem;
+            }
+
+        }
+
+        /* Desktop (min 768px): 5 per row */
+        @media (min-width: 768px) {
+
+
+            .nav-inner {
+                width: 86%;
+            }
+
+            .logo {
+                height: 2.6rem;
+            }
+
+            .menu-link {
+                font-size: 1rem;
+            }
+
+            .search-input {
+                width: 18vw;
+                min-width: 14rem;
+            }
+
+            .hello {
+                display: none;
+            }
+        }
+
+
+        .footer {
+            background-color: #f5f5f5;
+            color: #000;
+            padding: 40px 100px;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .footer-column {
+            flex: 0.5 1 180px;
+            min-width: 160px;
+        }
+
+        .footer-column h4 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #111;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #222;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li:hover {
+            color: #c2002f;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .social-icons a {
+            background-color: #c2002f;
+            color: #fff;
+            font-size: 18px;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+
+        .app-links img {
+            width: 120px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+            text-align: center;
+            padding-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* 🔹 Responsive Design */
+        @media (min-width: 768px) {
+            .footer-container {
+                flex-wrap: nowrap;
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .footer-container {
+                justify-content: center;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer {
+                padding: 30px 20px;
+            }
+
+            .footer-column {
+                flex: 1 1 100%;
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .app-links {
+                justify-content: center;
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1200px) {
+
+            .nav-right {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-inner">
+            <div class="nav-left">
+                <!-- PNG logo (screenshot-style) -->
+                <img class="logo"
+                    src="https://play-lh.googleusercontent.com/iRSc0WcWTD0eyDdAnFW-ORGWWNzKMzvAsuFmItspEd3hqTKn2K71zOqOIHQZmk1N7A"
+                    alt="JioTV logo" /> <span style="font-weight: bold;">JIO TV</span>
+
+                <!-- main menu -->
+                <nav class="main-menu">
+                    <a class="menu-link" href="index.html">For You</a>
+                    <a class="menu-link" href="index.html">TV Guide</a>
+                    <a class="menu-link" href="#">Premium</a>
+                    <a class="menu-link" href="#">Movies</a>
+                    <a class="menu-link " href="sports.html">Sports</a>
+                    <a class="menu-link" href="#">Specials</a>
+                    <a class="menu-link active" href="kidz.html">Kids</a>
+                    <a class="menu-link" href="#">News</a>
+                    <a class="menu-link" href="#">Shows</a>
+                </nav>
+            </div>
+
+
+
+            <div class="nav-right">
+                <div class="search-wrap">
+                    <button class="icon-btn search-icon" aria-hidden="true">
+                        <img src="https://img.icons8.com/?size=100&id=7695&format=png&color=FFFFFF" alt="search" />
+                    </button>
+                    <input class="search-input" type="text" placeholder="Search JioTV" aria-label="Search JioTV" />
+                    <button class="icon-btn mic-icon" aria-hidden="true">
+                        <img src="https://github.com/Jilanmansuri/CGxSU_Semester_1/blob/main/html_css_js/CSS/00.assignment/02.level_2/08.youtube-clone/assets/mic.png?raw=true"
+                            alt="mic" />
+                    </button>
+                </div>
+
+                <button class="profile-btn" aria-label="profile">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.xOngRTGvNQihRmDvtCr23gHaEf?rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="profile" />
+                </button>
+            </div>
+        </div>
+
+
+    </header>
+    <div>
+        <nav class="main-menu hello">
+            <a class="menu-link " href="index.html">For You</a>
+            <a class="menu-link" href="index.html">TV Guide</a>
+            <a class="menu-link" href="#">Premium</a>
+            <a class="menu-link" href="#">Movies</a>
+            <a class="menu-link" href="sports.html">Sports</a>
+            <a class="menu-link" href="#">Specials</a>
+            <a class="menu-link active" href="kidz.html">Kids</a>
+            <a class="menu-link" href="#">News</a>
+            <a class="menu-link" href="#">Shows</a>
+        </nav>
+    </div>
+
+    <main class="kids-container">
+
+        <!-- Discovery Kids -->
+        <section class="kids-section">
+            <h2>Discovery Kids</h2>
+            <div class="kids-row scroll-row">
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554082.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-27/251027554023.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554084.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554035.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554027.jpg?width=700"
+                        alt="">
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Munchkin Media -->
+        <section class="kids-section">
+            <h2>Munchkin Media</h2>
+            <div class="kids-row scroll-row">
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-27/251027554023.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554082.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554084.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554035.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554027.jpg?width=700"
+                        alt="">
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Kids Regional Channels -->
+        <section class="kids-section">
+            <h2>Kids Regional Channels</h2>
+            <div class="kids-row scroll-row">
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554084.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554082.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-27/251027554023.jpg?width=700"
+                        alt="">
+
+                </div>
+                
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554035.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554027.jpg?width=700"
+                        alt="">
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Nick Channels -->
+        <section class="kids-section">
+            <h2>Popular Nick Channels</h2>
+            <div class="kids-row scroll-row">
+
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554035.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554082.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-27/251027554023.jpg?width=700"
+                        alt="">
+
+                </div>
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554084.jpg?width=700"
+                        alt="">
+
+                </div>
+                
+                <div class="card"><img
+                        src="https://jiotvimages.cdn.jio.com/dare_images/shows/2025-10-28/251028554027.jpg?width=700"
+                        alt="">
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Power Kids -->
+        <section class="kids-section">
+            <h2>Power Kids</h2>
+            <div class="kids-row scroll-row">
+
+
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li>Home</li>
+                    <li>Premium</li>
+                    <li>Movies</li>
+                    <li>Sports</li>
+                    <li>Specials</li>
+                    <li>Kids</li>
+                    <li>News</li>
+                    <li>Shows</li>
+                    <li>Assembly Elections</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Top Entertainment Channels</h4>
+                <ul>
+                    <li>Colors HD</li>
+                    <li>SET HD</li>
+                    <li>Colors Cineplex HD</li>
+                    <li>Dangal</li>
+                    <li>Colors Kannada HD</li>
+                    <li>Colors Marathi HD</li>
+                    <li>Sony SAB HD</li>
+                    <li>Sun TV HD</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Top News Channels</h4>
+                <ul>
+                    <li>Aaj Tak</li>
+                    <li>India TV</li>
+                    <li>ABP News India</li>
+                    <li>Republic Bharat</li>
+                    <li>News 18 India</li>
+                    <li>TV9 Bharatvarsh</li>
+                    <li>TV9 Telugu News</li>
+                    <li>TV9 Kannada</li>
+                    <li>Zee News</li>
+                    <li>Zee Business</li>
+                    <li>News 24</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Top Sports Channels</h4>
+                <ul>
+                    <li>Sports18 1 HD</li>
+                    <li>Sports18 2</li>
+                    <li>Sony Ten 1 HD</li>
+                    <li>Sports18 Khel</li>
+                    <li>Sony Ten 1</li>
+                    <li>Sony Ten 5 HD</li>
+                    <li>Jio Cricket English HD</li>
+                    <li>Eurosport HD</li>
+                    <li>Brave TV</li>
+                    <li>Sony Ten 3 HD Hindi</li>
+                </ul>
+            </div>
+
+            <div class="footer-column social">
+                <h4>Connect with us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-youtube"></i></a>
+                </div>
+                <h4>Download Our App</h4>
+                <div class="app-links">
+                    <img src="https://www.jiotv.com/images/play-store.png" alt="Google Play">
+                    <img src="https://www.jiotv.com/images/app-store.png" alt="App Store">
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Reliance JioTV. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>store-locator</title>
+  <link rel="icon" type="image/png" href="https://th.bing.com/th/id/R.389b48c8cb8e6d183ed3105ffa529f42?rik=2NTRP9az8yPF4A&riu=http%3a%2f%2fstores.barista.co.in%2fwp-content%2fuploads%2f2024%2f04%2fBarista-Circle-Logo-PNG-1000x1000-1.png&ehk=E2WCnkGV0sulMQu9w8bWPzg4LqnxWmfTGByvUErdnGU%3d&risl=&pid=ImgRaw&r=0">
+    <style>
+        body {
+            background-color: #EFE3D5;
+            color: #3c2a23;
+            line-height: 1.6;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #4C3935;
+            border-radius: 8px;
+        }
+
+        body::-webkit-scrollbar {
+            width: 8px;
+            background: #F5F5F5;
+        }
+
+
+        body::-webkit-scrollbar:horizontal {
+            display: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background-color: #f4e4d7;
+
+            position: sticky;
+            top: 0;
+        }
+
+        .logo img {
+            height: 45px;
+            max-width: 150px;
+        }
+
+        .nav-links {
+            display: flex;
+
+            gap: 1.4em;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #3c2a23;
+            font-weight: 550;
+            transition: color 0.3s;
+            font-size: 1em;
+            
+
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #e85a2a;
+        }
+
+
+
+
+        /* -----------------------------------------------------Footer--------------------------------------- */
+        .logo2 img {
+            width: 200px;
+        }
+
+        .logo2 {
+            width: 200px;
+        }
+
+        footer {
+            width: 100vw;
+            margin-top: 4em;
+            background: #4C3935;
+            color: #fff;
+            padding-top: 3em;
+            padding-bottom: 3em;
+        }
+
+        .footer-top {
+            display: flex;
+            width: 74vw;
+            margin-left: 13vw;
+            justify-content: space-between;
+            gap: 5em;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            font-size: 1.3em;
+        }
+
+        .footer-columns h4 {
+            margin-bottom: 10px;
+            color: #e14b2b;
+        }
+
+        .footer-columns a {
+            font-size: 0.8em;
+            line-height: 2.3;
+            color: white;
+            font-weight: 400;
+            text-decoration: none;
+            display: block;
+        }
+
+        .footer-columns a:hover {
+            color: #F26644;
+        }
+
+        .copyright {
+            font-size: 1em;
+            color: white;
+            margin-top: 5em;
+            margin-left: 13vw;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap');
+
+        h1 {
+            font-weight: 900;
+            -webkit-text-stroke: 2px #4C3935;
+            font-family: 'Baloo 2', cursive;
+            color: #4C3935;
+            text-align: center;
+            font-size: 3em;
+            margin-top: 2.5em;
+        }
+
+
+        .india {
+
+
+            border-radius: 12px;
+            font-size: 1.2rem;
+            padding-left: 1em;
+            padding-right: 1em;
+            padding-bottom: 0.8em;
+            padding-top: 0.8em;
+            background-color: white;
+            border: 1px solid #ced4da;
+            color: #495057;
+            box-shadow: 0 0 5px rgba(75, 46, 35, 0.3)
+        }
+
+
+
+
+        .choice {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+            margin-top: 10px;
+        }
+
+        #search {
+            width: 150px;
+            background-color: #f26644;
+            color: white;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 74vw;
+            height: 75vh;
+            background-color: white;
+            border-radius: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2em;
+            padding: 1em;
+        }
+
+        .map {
+            width: 65%;
+            height: 100%;
+        }
+
+
+
+        .store-list {
+            width: 32%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+
+
+
+        .store-card {
+            background-color: #F5F5F5;
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .store-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .store-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .store-name {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .store-location {
+            font-size: 14px;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .store-location i {
+            font-size: 15px;
+        }
+
+        .direction {
+            color: #006eff;
+            font-weight: 500;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: 0.3s;
+        }
+
+        .direction:hover {
+            text-decoration: underline;
+        }
+
+        .direction i {
+            font-size: 17px;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 576px) {
+            .navbar {
+                display: flex;
+                flex-direction: row;
+                text-align: center;
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-direction: row;
+                gap: 8px;
+            }
+
+            .nav-links a {
+                font-size: 6px;
+            }
+
+            .logo {
+                width: 15px;
+            }
+
+            .logo img {
+                height: 15px;
+
+            }
+
+
+            .footer-top {
+                flex-direction: column;
+                width: 95%;
+                margin-left: auto;
+                margin-right: auto;
+                gap: 2em;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                gap: 1em;
+                font-size: 1rem;
+            }
+
+            .copyright {
+                margin-left: 0;
+                text-align: center;
+                font-size: 0.7em;
+            }
+
+            .choice {
+                flex-direction: column;
+                align-items: center;
+                gap: 1em;
+                margin-top: 1.5em;
+            }
+
+            .india {
+                width: 80%;
+                font-size: 1rem;
+                padding: 0.6em;
+            }
+
+            #search {
+                width: 50%;
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                width: 90%;
+                border-radius: 20px;
+                padding: 1em;
+            }
+
+            .map {
+                width: 100%;
+                height: 250px;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+
+            .store-list {
+                width: 100%;
+                height: auto;
+                margin-top: 1em;
+                overflow: visible;
+            }
+
+            .store-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .direction {
+                font-size: 0.9em;
+            }
+        }
+
+
+
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 12px 6%;
+                font-size: 0.7em;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .middle {
+                flex-direction: column;
+                padding: 50px 8%;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .copyright {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            .choice {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1.5em;
+            }
+
+            .india {
+                width: 40%;
+                font-size: 1.1rem;
+                padding: 0.7em;
+            }
+
+            #search {
+                width: 25%;
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                width: 85%;
+                border-radius: 25px;
+                padding: 1.5em;
+            }
+
+            .map {
+                width: 100%;
+                height: 350px;
+                border-radius: 10px;
+            }
+
+            .store-list {
+                width: 100%;
+                height: auto;
+                margin-top: 1em;
+                overflow: visible;
+            }
+
+            .store-card {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+        }
+
+
+        @media (min-width: 768px) {
+            .rightlogo {
+                width: 16vw;
+                background-color: bisque;
+                padding: 0.8em 2em;
+                border-bottom-left-radius: 40px;
+                position: relative;
+                bottom: 6px;
+            }
+
+            .rightlogo img {
+                width: 90px;
+            }
+
+            .logo {
+                margin-left: 13vw;
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                width: 100vw;
+                height: 9vh;
+
+                overflow: hidden;
+                align-items: center;
+                padding: 0;
+                z-index: 100;
+                position: sticky;
+                top: 0;
+                background-color: white;
+               
+
+            }
+
+            .choice {
+                flex-direction: row;
+                justify-content: center;
+                gap: 2em;
+            }
+
+            .container {
+                flex-direction: row;
+                justify-content: space-between;
+                width: 74vw;
+                height: 75vh;
+            }
+
+            .map {
+                width: 65%;
+                height: 100%;
+            }
+
+            .store-list {
+                width: 32%;
+                height: 100%;
+                overflow-y: scroll;
+            }
+
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="https://www.barista.co.in/themes/custom/barista/img/logo.svg"
+                    alt="Barista Logo"></a>
+        </div>
+        <div class="nav-links">
+            <a href="story.html">Our Story</a>
+            <a href="store-locator.html" class="active">Store Locator</a>
+            <a href="Franchise with us.html">Franchise with us</a>
+            <a href="Alliances.html">Alliances</a>
+            <a href="Be a Barista.html">Be a Barista</a>
+            <a href="Coffee Vending.html">Coffee Vending</a>
+            <a href="careers.html">Careers</a>
+            <a href="shop.html">Shop</a>
+        </div>
+        <div class="rightlogo">
+            <img src="https://www.barista.co.in/themes/custom/barista/img/logo-diner.svg" alt="">
+        </div>
+
+    </div>
+
+
+
+    <h1>Store Locator</h1>
+
+
+    <div class="choice">
+
+        <select name="" id="barista" class="india">
+            <option value="">Select Format</option>
+            <option value="">Barista</option>
+            <option value="">Barista Diner</option>
+        </select>
+
+
+
+        <select name="" id="State" class="india">
+            <option>Select State</option>
+            <option>Andhra Pradesh</option>
+            <option>Arunachal Pradesh</option>
+            <option>Assam</option>
+            <option>Bihar</option>
+            <option>Chhattisgarh</option>
+            <option>Delhi</option>
+            <option>Goa</option>
+            <option>Gujarat</option>
+            <option>Haryana</option>
+            <option>Himachal Pradesh</option>
+            <option>Jammu and Kashmir</option>
+            <option>Jharkhand</option>
+            <option>Karnataka</option>
+            <option>Kerala</option>
+            <option>Madhya Pradesh</option>
+            <option>Maharashtra</option>
+            <option>Manipur</option>
+            <option>Meghalaya</option>
+            <option>Mizoram</option>
+            <option>Nagaland</option>
+            <option>Odisha</option>
+            <option>Punjab</option>
+            <option>Rajasthan</option>
+            <option>Sikkim</option>
+            <option>Tamil Nadu</option>
+            <option>Telangana</option>
+            <option>Tripura</option>
+            <option>Uttar Pradesh</option>
+            <option>Uttarakhand</option>
+            <option>West Bengal</option>
+        </select>
+
+
+        <select name="" id="City" class="india">
+            <option>Select City</option>
+            <option>Ahmedabad</option>
+            <option>Surat</option>
+            <option>Gandhinagar</option>
+            <option>Delhi</option>
+            <option>Mumbai</option>
+            <option>Hyderabad</option>
+            <option>Bengaluru</option>
+            <option>Kolkata</option>
+            <option>Pune</option>
+            <option>Jaipur</option>
+            <option>Udaipur</option>
+            <option>Nashik</option>
+            <option>Vadodara</option>
+            <option>Rajkot</option>
+            <option>Nagpur</option>
+            <option>Srinagar</option>
+            <option>Noida</option>
+            <option>Gurugram</option>
+            <option>Faridabad</option>
+            <option>Ghaziabad</option>
+            <option>Kota</option>
+            <option>Jodhpur</option>
+            <option>Chandigarh</option>
+            <option>Amritsar</option>
+            <option>Ludhiana</option>
+            <option>Patiala</option>
+            <option>Indore</option>
+            <option>Bhopal</option>
+            <option>Gwalior</option>
+            <option>Jabalpur</option>
+            <option>Lucknow</option>
+            <option>Kanpur</option>
+            <option>Agra</option>
+            <option>Ranchi</option>
+            <option>Jamshedpur</option>
+            <option>Bokaro</option>
+            <option>Howrah</option>
+            <option>Durgapur</option>
+            <option>Asansol</option>
+            <option>Bhubaneswar</option>
+            <option>Cuttack</option>
+            <option>Rourkela</option>
+            <option>Guwahati</option>
+            <option>Shillong</option>
+            <option>Imphal</option>
+            <option>Gangtok</option>
+            <option>Itanagar</option>
+            <option>Aizawl</option>
+            <option>Agartala</option>
+            <option>Warangal</option>
+            <option>Nizamabad</option>
+            <option>Vijayawada</option>
+            <option>Visakhapatnam</option>
+            <option>Tirupati</option>
+            <option>Chennai</option>
+            <option>Madurai</option>
+            <option>Coimbatore</option>
+            <option>Salem</option>
+            <option>Erode</option>
+            <option>Tiruchirappalli</option>
+            <option>Mysuru</option>
+            <option>Hubballi</option>
+            <option>Mangaluru</option>
+            <option>Kochi</option>
+            <option>Thiruvananthapuram</option>
+            <option>Kozhikode</option>
+            <option>Alappuzha</option>
+            <option>Panaji</option>
+            <option>Margao</option>
+            <option>Shimla</option>
+            <option>Dharamshala</option>
+            <option>Dehradun</option>
+            <option>Haridwar</option>
+            <option>Nainital</option>
+            <option>Jammu</option>
+            <option>Leh</option>
+            <option>Port Blair</option>
+            <option>Daman</option>
+            <option>Silvassa</option>
+            <option>Puducherry</option>
+        </select>
+
+        <button id="search" class="india">Search</button>
+
+
+    </div>
+
+
+    <div class="container">
+        <div class="map"><iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3754.659509801154!2d72.50700748686297!3d23.224446497169417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1761208365056!5m2!1sen!2sin"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+
+
+        <div class="store-list">
+            <div class="store-card">
+                <div class="store-info">
+                    <div class="store-name">Paras Trade Center</div>
+                    <div class="store-location"><i class="fas fa-map-marker-alt"></i> Gurugram</div>
+                </div>
+                <a href="#" class="direction"><i class="fas fa-location-arrow"></i> Direction</a>
+            </div>
+
+            <div class="store-card">
+                <div class="store-info">
+                    <div class="store-name">South Point Mall</div>
+                    <div class="store-location"><i class="fas fa-map-marker-alt"></i> Gurugram</div>
+                </div>
+                <a href="#" class="direction"><i class="fas fa-location-arrow"></i> Direction</a>
+            </div>
+
+            <div class="store-card">
+                <div class="store-info">
+                    <div class="store-name">Centrum Plaza</div>
+                    <div class="store-location"><i class="fas fa-map-marker-alt"></i> Gurugram</div>
+                </div>
+                <a href="#" class="direction"><i class="fas fa-location-arrow"></i> Direction</a>
+            </div>
+
+            <div class="store-card">
+                <div class="store-info">
+                    <div class="store-name">Baani Square</div>
+                    <div class="store-location"><i class="fas fa-map-marker-alt"></i> Gurugram</div>
+                </div>
+                <a href="#" class="direction"><i class="fas fa-location-arrow"></i> Direction</a>
+            </div>
+
+            <div class="store-card">
+                <div class="store-info">
+                    <div class="store-name">MGF Megacity</div>
+                    <div class="store-location"><i class="fas fa-map-marker-alt"></i> Gurugram</div>
+                </div>
+                <a href="#" class="direction"><i class="fas fa-location-arrow"></i> Direction</a>
+            </div>
+            <div class="store-card">
+                <div class="store-info">
+                    <div class="store-name">KGF Chempuk</div>
+                    <div class="store-location"><i class="fas fa-map-marker-alt"></i> Gurugram</div>
+                </div>
+                <a href="#" class="direction"><i class="fas fa-location-arrow"></i> Direction</a>
+            </div>
+            <div class="store-card">
+                <div class="store-info">
+                    <div class="store-name">M3M</div>
+                    <div class="store-location"><i class="fas fa-map-marker-alt"></i> Gurugram</div>
+                </div>
+                <a href="#" class="direction"><i class="fas fa-location-arrow"></i> Direction</a>
+            </div>
+            <div class="store-card">
+                <div class="store-info">
+                    <div class="store-name">SEC 22</div>
+                    <div class="store-location"><i class="fas fa-map-marker-alt"></i> Gurugram</div>
+                </div>
+                <a href="#" class="direction"><i class="fas fa-location-arrow"></i> Direction</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="logo2">
+                <img src="https://www.barista.co.in/themes/custom/barista/img/footer-logo.svg"
+                    alt="Barista Footer Logo">
+            </div>
+            <div class="footer-columns">
+                <div>
+                    <h4>Menu</h4>
+                    <a href="#">What's new</a>
+                    <a href="#">Drinks</a>
+                    <a href="#">Food</a>
+                </div>
+                <div>
+                    <h4>Get to know us</h4>
+                    <a href="#">Contact us</a>
+                    <a href="#">Store Locator</a>
+                    <a href="#">Investor’s Relations</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <a href="#">Be our Distributor</a>
+                    <a href="#">Franchise with Us!</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Be a Barista</a>
+                </div>
+                <div>
+                    <h4>Connect with us</h4>
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <hr style="margin-top: 3em; width: 74vw; margin-left: auto; margin-right: auto; opacity: 0.5;">
+        <p class="copyright">Copyright © 2023 baristacoffee. All Rights Reserved.</p>
+    </footer>
+
+
+</body>
+
+</html>

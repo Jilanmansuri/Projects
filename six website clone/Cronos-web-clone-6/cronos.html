@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cronos Newsletter</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #111;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 60px;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.navbar h2 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-right i {
+  font-size: 18px;
+  cursor: pointer;
+  color: #111;
+}
+
+.nav-right span a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+.nav-right button {
+  background-color: #052b6b;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  height: 45px;
+  width: 120px;
+  transition: 0.3s;
+}
+
+.nav-right button:hover {
+  background-color: #102b5b;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .navbar h2 {
+    font-size: 22px;
+  }
+
+  .nav-right {
+    gap: 15px;
+  }
+
+  .nav-right button {
+    height: 40px;
+    width: 100px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px 25px;
+  }
+
+  .nav-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-right {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .navbar h2 {
+    font-size: 20px;
+  }
+
+  .nav-right button {
+    flex: 1;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 15px;
+  }
+
+  .navbar h2 {
+    font-size: 18px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-right i {
+    font-size: 16px;
+  }
+
+  .nav-right button {
+    height: 38px;
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+
+    .content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .content h1 {
+      font-size: 34px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    .subtext {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .date {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .reaction-bar {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
+
+    .reaction-bar i {
+      margin-right: 6px;
+      color: #333;
+    }
+
+    .share-btn {
+      margin-left: auto;
+      background-color: #f3f3f3;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .banner {
+      width: 100%;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    .banner img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .newsletter {
+      max-width: 750px;
+      margin: 0 auto;
+      color: #333;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .newsletter p {
+      margin-bottom: 16px;
+    }
+
+    .newsletter ul {
+      margin: 12px 0 24px 30px;
+    }
+
+    .newsletter li {
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-top: 35px;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .subsection {
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: black;
+    }
+
+    .highlight {
+      font-style: italic;
+      font-weight: 700;
+      color: #000000;
+      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    }
+
+    .banner-2 {
+      width: 100%;
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+
+    .banner-2 img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .newss{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 60px;
+      border-bottom: 1px solid #eee;
+      background-color: #fff;
+      position: sticky;
+    }
+
+    li b {
+      font-weight: 700;
+    }
+
+     .italic-note {
+      font-size: 13px;
+      font-style: italic;
+      color: #555;
+      margin-top: 20px;
+      line-height: 1.5;
+      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    }
+
+    a {
+      color: #555;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: underline;
+
+    }
+
+    hr {
+      margin-top: 40px;
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+
+    .sec{
+      padding-right: 20px;
+    }
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 14px 20px;
+      }
+
+      .nav-right {
+        gap: 15px;
+      }
+
+      .content h1 {
+        font-size: 26px;
+      }
+
+      .subtext {
+        font-size: 16px;
+      }
+    }
+    .newslett {
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+      padding: 30px;
+      color: #2a2a2a;
+      min-height: 100vh;
+      margin-left: 490px;
+    }
+
+    .newslett h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .newslett p.meta {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .newslett p.desc {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .newslett .input-group {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .newslett input[type="email"] {
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+      width: 260px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .newslett button {
+      padding: 10px 20px;
+      background-color: #2f437e;
+      color: white;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+      text-align: center;
+    }
+
+    .newslett button:hover {
+      background-color: #21315c;
+    }
+
+    .newslett .terms {
+      font-size: 11.5px;
+      color: #777;
+      line-height: 1.4;
+    }
+
+    .newslett .terms a {
+      color: #777;
+      text-decoration: underline;
+    }
+
+    .newslett .terms a:hover {
+      text-decoration: underline;
+    }
+
+    .desc a{
+      color: #444;
+      text-decoration: none;
+    }
+
+      .container {
+      width: 700px;
+      padding: 20px 30px;
+      padding: 40px;
+      position: relative;
+      right: 70px;
+      
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .avatars {
+      display: flex;
+    }
+
+    .avatars img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-left: -8px;
+      border: 2px solid #fff;
+    }
+
+    .likes {
+      font-size: 14px;
+      color: #444;
+    }
+
+    .reactions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .react-btn {
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 14px;
+      background: #f9f9f9;
+      cursor: pointer;
+    }
+    .react-btn1 {
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 14px;
+      background: #f9f9f9;
+      cursor: pointer;
+      margin-left: 390px;
+    }
+
+    .react-btn i {
+      margin-right: 6px;
+      color: #666;
+    }
+
+    .react-btn:hover {
+      background: #eee;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 15px;
+      font-size: 14px;
+      margin: 15px 0;
+    }
+
+    .tab {
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #555;
+    }
+
+    .tab.active {
+      background: #adabab;
+      color: #201e1e;
+    }
+
+    .article {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #eee;
+      padding: 18px 0;
+    }
+
+    .article img {
+      width: 120px;
+      height: 70px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .article-content {
+      flex: 1;
+      margin-right: 15px;
+    }
+
+    .article h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .article p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 4px;
+    }
+
+    .article span {
+      font-size: 12px;
+      color: #777;
+    }
+
+    .see-all {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .see-all button {
+      background: #e5e5e5;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      color: #444;
+    }
+
+    .see-all button:hover {
+      background: #ddd;
+    }
+
+    .blue{
+      background-color: #0A2D74;
+      width: 100%;
+      height: 155px;
+      color: white;
+      font-size: .9em;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .blue h2{
+      padding-bottom: 10px;
+    }
+    
+    .blue input{
+      height: 32px;
+      width: 289px;
+      border-radius: 6px;
+    }
+    input{
+      font-size: 14px;
+      padding-left: 10px;
+      position: relative;
+      left: 30px;
+    }
+    .blue button{
+      width: 80px;
+      height: 27px;
+      position: relative;
+      background-color: #0A2D74;
+      color: #b5bfd5;
+      right: 56px;
+      border-radius: 0 4px 5px 0;
+    }
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 13px;
+      color: #555;
+      background-color: #f0f0f0;
+    }
+
+    .footer-links {
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      color: #555;
+      text-decoration: none;
+      margin: 0 4px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-buttons {
+      margin-bottom: 15px;
+    }
+
+    .footer-buttons button {
+      border: 1px solid #ddd;
+      background-color: white;
+      border-radius: 6px;
+      padding: 8px 14px 8px 34px;
+      margin: 0 6px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .footer-buttons button:hover {
+      background-color: #f6f6f6;
+    }
+
+    .footer-buttons .substack-btn::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,%3Csvg%20role%3D%22img%22%20width%3D%221000%22%20height%3D%221000%22%20viewBox%3D%220%200%201000%201000%22%20fill%3D%22%23ff6719%22%20stroke-width%3D%221.8%22%20stroke%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%3E%3Cpath%20d%3D%22M764.166%20348.371H236.319V419.402H764.166V348.371Z%22%2F%3E%3Cpath%20d%3D%22M236.319%20483.752V813.999L500.231%20666.512L764.19%20813.999V483.752H236.319Z%22%2F%3E%3Cpath%20d%3D%22M764.166%20213H236.319V284.019H764.166V213Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .footer-bottom a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="nav-left">
+      <img src="https://substackcdn.com/image/fetch/$s_!qWYj!,w_80,h_80,c_fill,f_webp,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Ff33e5d27-af2d-4a44-9dfb-2efff17e7116_1000x1000.png" alt="Cronos Logo" class="logo">
+      <h2>Cronos Newsletter</h2>
+    </div>
+
+    <div class="nav-right">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <i class="fa-solid fa-arrow-up-from-bracket"></i>
+      <button>Subscribe</button>
+      <span style="color:#333; font-weight:500; cursor:pointer;"><a href="signin.html">Sign in</a></span>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>The Golden Age of On-Chain Dominance</h1>
+    <p class="subtext">New Cronos 2025–2026 Roadmap</p>
+    <p class="date">AUG 26, 2025</p>
+
+    <div class="reaction-bar">
+      <span><i class="fa-regular fa-heart"></i> 32</span>
+      <span><i class="fa-solid fa-arrows-rotate"></i> 6</span>
+      <button class="share-btn">Share</button>
+    </div>
+
+    <div class="banner">
+      <img src="https://substack-post-media.s3.amazonaws.com/public/images/f9bf9968-b498-4a7d-bab0-4f242f8f0303_1600x901.png" alt="Cronos Banner">
+    </div>
+  </div>
+
+  <div class="newsletter">
+    <p>2025 isn’t just another year for crypto and Cronos – <strong>it’s the inflection point.</strong></p>
+    <p>The world is waking up to the power of on-chain infrastructure. Global leaders are placing bold bets on an on-chain future.</p>
+    <p>Stablecoins have already showcased what digital assets are capable of, reaching a $271B market cap. Tokenization has exploded 200% in two years to $25B in assets – setting the stage for a $18T revolution projected by 2033.</p>
+    <p>Cronos, in partnership with Crypto.com, is built to seize this moment. We unite:</p>
+
+    <ul>
+      <li><strong>Institutional-grade blockchain</strong> battle-tested with zero downtime over 4 years</li>
+      <li><strong>Ethereum interoperability</strong> for frictionless developer adoption and proven security</li>
+      <li><strong>A mature DeFi ecosystem</strong> engineered around AI agent-native primitives</li>
+      <li><strong>A global, trusted brand in Crypto.com</strong> with direct distribution to 150M+ users and numerous regulatory licenses and registrations worldwide</li>
+    </ul>
+
+    <p>With this foundation, we’re not here to participate. We’re here to win.</p>
+
+    <h2 class="section-title">Powering the Tokenized Asset Boom</h2>
+
+    <h3 class="subsection">1. Building the Backbone of Open and AI-Accessible Tokenized Markets on Cronos</h3>
+    <p>We are laying the foundations for a financial system where everyone can access the wealth creation opportunities once reserved for a select few...</p>
+
+    <p class="highlight">Cronos isn’t just building for today’s traders and institutions — we’re architecting an ecosystem where the next generation of participants, AI agents, operate seamlessly alongside humans.</p>
+
+     <ul class="normal">
+      <li><strong>Purpose-built tokenization platform:</strong> Offering a full spectrum of asset classes from equities, funds, and commodities to more complex categories like insurance, forex, and real estate, Cronos will provide a simple, unified infrastructure for bringing these markets on-chain 24/7.</li>
+
+      <li><strong> True on-chain ownership:</strong> Assets grounded in real, hard-earned regulatory licensing in the most demanding financial markets in the world, endeavouring to meet stringent compliance standards in numerous jurisdictions across the world. Cronos and Crypto.com deliver infrastructure that global institutions and everyday investors alike can trust.</li>
+
+      <li><strong>Enhanced utility:</strong> Tokenization on Cronos won’t just be about representation; it will be about utility. Unleashing T+0 instant transfer, earning yield on stocks, lending capabilities, and composability across existing and new dApps.</li>
+
+      <li><strong>Natively accessible by AI:</strong> From day one, our infrastructure will enable AI agents to build, trade, and collaborate with tokenized assets natively on-chain. This foundation is powered by our AI Agent SDK, and our new Proof of Identity standard.</li>
+    </ul>
+
+    <h3 class="subsection">2.Driving Retail Adoption With Crypto.com</h3>
+
+    <p>We believe crypto’s greatest impact will come when it’s woven seamlessly into everyday life — powering everything without friction, and unlocking unprecedented wealth and utility for billions. With its globally distributed and AI-optimized product suite, Crypto.com is the ideal channel to bring Cronos infrastructure to the masses.</p>
+
+    <ul class="normal">
+      <li><strong>DeFi for 150M+ users:</strong> By integrating directly with Crypto.com, millions of users will be able to access Cronos lending, staking, and other on-chain services with zero friction. This will open the floodgates of mainstream adoption, bringing millions directly into the Cronos ecosystem.</li>
+
+      <li><strong> Payments at scale with 10M+ eligible merchants:</strong> with a growing global merchant network, we’ll enable direct on-chain payments for goods and services, embedding Cronos into everyday transactions.</li>
+
+      <li><strong>World-leading USD liquidity:</strong> As the #1 exchange globally by spot volume with USD fiat rails, Crypto.com will support Cronos tokenized products for both trading and collateral — giving them instant liquidity, deep markets, and institutional credibility.</li>
+
+      <li><strong>Ready for the AI era: </strong>As people begin accessing financial products through LLM-powered interfaces, Project Cortex will emerge as the new gateway for billions to manage their day-to-day life. By embedding the power of the Cronos ecosystem, Cortex will make it effortless for humans and agents to trade, lend, stake, pay, and much more — all onchain.</li>
+    </ul>
+
+    <h3 class="subsection">3. Harnessing CRO Demand Through the Public Markets</h3>
+
+    <p>Crypto is witnessing massive inflows coming from institutions and the public markets. Our conviction is unchanged; we need to actively support the creation of ETFs and Digital Asset Treasury companies to drive strong liquidity and demand for Cronos.</p>
+
+    <ul class="normal">
+      <li><strong>CRO-powered ETFs:</strong> 21Shares, Canary Capital, and Trump Media Technology Group — we’re continuing to push ETFs into U.S. and EU markets to supercharge CRO adoption.</li>
+
+      <li><strong> CRO DATCO support: </strong>Support Digital Asset Treasury Companies that seek to include CRO in their strategy as an additional channel to join our vision and reinforce the ecosystem.</li>
+
+      <div class="banner-2">
+      <img src="https://substackcdn.com/image/fetch/$s_!pPIO!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff9bf9968-b498-4a7d-bab0-4f242f8f0303_1600x901.png" alt="Cronos Banner">
+    </div>
+    <p>These three growth engines — infrastructure built by Cronos, retail distribution through Crypto.com, and token demand from public markets — form a unified strategy to deliver the next breakthrough in adoption, liquidity, and market leadership for Cronos.</p>
+
+    <h2>Metrics to Track Our Progress</h2>
+      <p>
+        In the first half of 2025, we have seen the onset of Cronos’s tipping point.
+        By reducing the chain block time by a factor of 10 from 6s to 0.5s, and reducing
+        the gas cost also tenfold, we have witnessed over 400% increase in daily transactions
+        and 150% in daily active users.
+      </p>
+      <p>
+        To build on this momentum and keep ourselves accountable, we'll measure our
+        success with the following KPIs in 2026:
+      </p>
+      <ul>
+        <li><b>20B</b> of CRO accumulated via public market rails</li>
+        <li><b>10B</b> in real-world assets deployed in the ecosystem</li>
+        <li><b>20M</b> users across CeFi and DeFi using Cronos rails</li>
+
+        <div class="sec">
+      <h2>The Path Forward</h2>
+      <p>
+        This is not a roadmap — it’s a battle plan. Cronos is building the rails,
+        Crypto.com is unleashing the users, and the public markets are arming us with
+        unstoppable demand.
+      </p>
+      <p>
+        We are entering a new era of global finance, where the lines between traditional
+        and decentralized infrastructures are erased.
+        <b>This is the moment Cronos turns the promise of blockchain into the golden
+        age of on-chain dominance.</b>
+      </p>
+      <p><b>Let’s Make CRO Great Again!</b></p>
+      <p>
+        Join our community on X, Telegram, and builder Groups.
+        Learn more about Cronos on <a href="#">cronos.org</a>.
+      </p>
+      <p class="italic-note">
+        *This roadmap may include forward-looking statements about future developments or outcomes.
+        Actual results may differ and there is no guarantee these statements will be accurate.
+        Do not rely solely on forward-looking statements when making decisions.
+      </p>
+      <hr>
+      </div>
+      </ul>
+    </div>
+    <div class="newslett">
+    <h2>Subscribe to Cronos Newsletter</h2>
+    <p class="meta">By Cronos Labs · Launched 3 years ago</p>
+    <p class="desc">
+      Latest updates about Cronos chain & ecosystem. Visit Cronos chain at 
+      <a href="https://cronos.org" >https://cronos.org/</a> and Cronos Labs at 
+      <a href="https://cronoslabs.org" target="_blank">https://cronoslabs.org</a>.
+    </p>
+
+    <div class="input-group">
+      <input type="email" placeholder="Type your email..." />
+      <button>Subscribe</button>
+    </div>
+
+    <p class="terms">
+      By subscribing, I agree to Substack’s 
+      <a href="#">Terms of Use</a>, and acknowledge its 
+      <a href="#">Information Collection Notice</a> and 
+      <a href="#">Privacy Policy</a>.
+    </p>
+    <hr>
+        <div class="container">
+    <div class="top-bar">
+      <div class="avatars">
+        <img src="https://randomuser.me/api/portraits/men/11.jpg">
+        <img src="https://randomuser.me/api/portraits/women/12.jpg">
+        <img src="https://randomuser.me/api/portraits/men/13.jpg">
+        <img src="https://randomuser.me/api/portraits/women/14.jpg">
+        <img src="https://randomuser.me/api/portraits/men/15.jpg">
+      </div>
+      <div class="likes">32 Likes · 6 Restacks</div>
+    </div>
+
+    <div class="reactions">
+      <div class="react-btn"><i class="fa-regular fa-heart"></i> 32</div>
+      <div class="react-btn"><i class="fa-solid fa-retweet"></i> 6</div>
+      <div class="react-btn1">Share</div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab active">Top</div>
+      <div class="tab">Latest</div>
+      <div class="tab">Discussions</div>
+    </div>
+
+    <div class="article">
+      <div class="article-content">
+        <h3>The New Golden Age for Cronos</h3>
+        <p>CRO to onboard billions and invest in the U.S.!</p>
+        <span>Mar 3</span>
+      </div>
+      <img src="https://substackcdn.com/image/fetch/$s_!ie9H!,w_320,h_213,c_fill,f_webp,q_auto:good,fl_progressive:steep,g_center/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcb63de82-422c-40f9-9e90-799ebb234b72_3000x1500.png" alt="Golden Age">
+    </div>
+
+    <div class="article">
+      <div class="article-content">
+        <h3>Cronos Summer Cruise: Explore Cronos, Win $20k CRO & 7 Exclusive NFTs</h3>
+        <p>Powered by Galxe</p>
+        <span>Jul 25, 2023</span>
+      </div>
+      <img src="https://substackcdn.com/image/fetch/$s_!P4DA!,w_320,h_213,c_fill,f_webp,q_auto:good,fl_progressive:steep,g_center/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F95e6d99d-fc7a-4cdb-9efd-1e837b7652cb_6667x3750.jpeg" alt="Summer Cruise">
+    </div>
+
+    <div class="article">
+      <div class="article-content">
+        <h3>Cronos zkEVM Launches Its Alpha Mainnet powered by ZKsync</h3>
+        <p>Hong Kong, 15 August 2024 – Cronos Labs announced that Cronos zkEVM...</p>
+        <span>Aug 15, 2024</span>
+      </div>
+      <img src="https://substackcdn.com/image/fetch/$s_!TcvL!,w_320,h_213,c_fill,f_webp,q_auto:good,fl_progressive:steep,g_center/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F264f4319-8673-4c08-90a1-b846dfbf3bdd_1200x700.png" alt="zkEVM Launch">
+    </div>
+
+    <div class="see-all">
+      <button>See all ></button>
+    </div>
+  </div>
+  </div>
+  </div>
+</ul>
+  </div>
+<div class="blue">
+  <h2>Ready for more?</h2>
+  <input type="text" placeholder="Type your email...">
+  <button>Subscribe</button>
+</div>
+
+  <footer class="footer">
+    <div class="footer-links">
+      © 2025 Cronos Labs · 
+      <a href="#">Privacy</a> · 
+      <a href="#">Terms</a> · 
+      <a href="#">Collection notice</a>
+    </div>
+
+    <div class="footer-buttons">
+      <button class="substack-btn">Start your Substack</button>
+      <button>Get the app</button>
+    </div>
+
+    <div class="footer-bottom">
+      <a href="#">Substack</a> is the home for great culture
+    </div>
+  </footer>
+</body>
+</html>

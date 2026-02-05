@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cronos Newsletter - Sign In</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background-color: #101010;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .logo {
+      width: 45px;
+      height: 45px;
+      background-color: #0d0d0d;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .logo img {
+      width: 30px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid #555;
+      background-color: transparent;
+      color: #fff;
+      outline: none;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .password-link {
+      color: #ff6719;
+      font-size: 0.85rem;
+      text-align: right;
+      display: block;
+      margin-bottom: 25px;
+      text-decoration: none;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 15px;
+      background-color: #ff6719;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn a{
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .btn:hover {
+      background-color: #e75f15;
+    }
+
+    .signup-text {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    .signup-text a {
+      color: #ff6719;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .card {
+      background: linear-gradient(90deg, #181818, #1a1411);
+      border-radius: 14px;
+      margin-top: 45px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%;
+      max-width: 430px;
+    }
+
+    .card-left {
+      text-align: left;
+    }
+
+    .card-left h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .card-left p {
+      font-size: 0.85rem;
+      color: #aaa;
+      margin-bottom: 10px;
+    }
+
+    .qr {
+      background-color: #fff;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .store-btns img {
+      width: 120px;
+      height: auto;
+      display: flex;
+      margin-right: 5px;
+      margin-top: 5px;
+    }
+
+    .card img.phone {
+      height: 180px;
+      border-radius: 15px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .card img.phone {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="https://substackcdn.com/image/fetch/$s_!qWYj!,w_96,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Ff33e5d27-af2d-4a44-9dfb-2efff17e7116_1000x1000.png" alt="Cronos Logo">
+    </div>
+    <h2>Sign in to Cronos Newsletter</h2>
+    <form>
+      <input type="email" placeholder="Email" required>
+      <a href="#" class="password-link">Sign in with password</a>
+      <button class="btn"><a href="index.html">Continue</a></button>
+    </form>
+    <p class="signup-text">First time here? <a href="signup.html">Create an account</a></p>
+
+    <div class="card">
+      <div class="card-left">
+        <h3>Stay signed in</h3>
+        <p>Download the Substack app for Android or iOS</p>
+        <div class="qr">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://substack.com" alt="QR Code">
+        </div>
+        <div class="store-btns">
+          <img src="https://substackcdn.com/image/fetch/$s_!rVXH!,w_320,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Fimg%2Fapp_page%2Fapp-store.png" alt="App Store">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+        </div>
+      </div>
+      <img class="phone" src="https://substackcdn.com/image/fetch/$s_!KDaw!,w_360,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Fimg%2Fapp_page%2Fhighlight-6-ios-v2.png" alt="Phone Mockup">
+    </div>
+  </div>
+</body>
+</html>

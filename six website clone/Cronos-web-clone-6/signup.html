@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cronos Newsletter</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .newsletter-container {
+      max-width: 650px;
+      text-align: center;
+    }
+
+    .banner {
+      width: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .banner img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .author {
+      color: #777;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
+
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 380px;
+      margin: 0 auto 15px;
+    }
+
+    input[type="email"] {
+      flex: 1;
+      padding: 12px 15px;
+      border: none;
+      outline: none;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    button {
+      background-color: #3c4b78;
+      color: #fff;
+      border: none;
+      padding: 0 20px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #2e3c66;
+    }
+
+    .terms {
+      font-size: 0.8rem;
+      color: #777;
+      max-width: 420px;
+      margin: 0 auto 20px;
+      line-height: 1.5;
+    }
+
+    .terms a {
+      color: #3c4b78;
+      text-decoration: none;
+    }
+
+    .learn-more {
+      font-size: 0.9rem;
+      color: #3c4b78;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 500;
+    }
+
+    .learn-more:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="newsletter-container">
+    <div class="banner">
+      <img src="https://substackcdn.com/image/fetch/$s_!mWdU!,w_1360,c_limit,f_webp,q_auto:best,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F2798c5b5-c9a6-4884-a1a5-c93e847020cf_1200x675.png" alt="Cronos Banner">
+    </div>
+
+    <h2>Cronos Newsletter</h2>
+    <p>Latest updates about Cronos chain & ecosystem.<br>
+       Visit Cronos chain at <a href="https://cronos.org/">https://cronos.org/</a><br>
+       and Cronos Labs at <a href="https://cronoslabs.org/">https://cronoslabs.org/</a>.
+    </p>
+
+    <p class="author">By Cronos Labs · Over 52,000 subscribers</p>
+
+    <form class="form-container">
+      <input type="email" placeholder="Type your email..." required>
+      <button type="submit"><a href="index.html">Subscribe</a></button>
+    </form>
+
+    <p class="terms">
+      By subscribing, I agree to Substack’s <a href="#">Terms of Use</a> and acknowledge its 
+      <a href="#">Information Collection Notice</a> and <a href="#">Privacy Policy</a>.
+    </p>
+
+    <a href="#" class="learn-more">Learn More <span>➜</span></a>
+  </div>
+</body>
+</html>

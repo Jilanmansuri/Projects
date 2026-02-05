@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JioTV Sports</title>
+     <link rel="icon" type="image/png" href="https://cdn6.aptoide.com/imgs/b/c/3/bc3124bbcbf3e95b8efe5df814fadab2_icon.png">
+
+    <style>
+        /* 🔹 Base */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #111;
+        }
+
+        .navbar {
+            width: 100%;
+            background: #aa0023;
+            /* deep red similar to JioTV */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.6rem 0;
+        }
+
+        .nav-inner {
+            width: 92%;
+            display: flex;
+            /* flex only */
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        /* left side: logo + menu */
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+        }
+
+        /* PNG logo */
+        .logo {
+            height: 2.2rem;
+            width: auto;
+            display: block;
+            margin-left: 0.2rem;
+        }
+
+        /* main menu links */
+        .main-menu {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        /* menu link style */
+        .menu-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.25rem 0;
+            position: relative;
+        }
+
+        /* underline for active (For You) */
+        .menu-link.active {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .menu-link.active::after {
+            content: "";
+            height: 0.18rem;
+            width: 1.6rem;
+            background: #f2f2f2;
+            position: absolute;
+            left: 0;
+            bottom: -0.4rem;
+            border-radius: 0.08rem;
+        }
+
+        .main-menu a:hover {
+            text-decoration: underline;
+        }
+
+        /* right side: search + profile */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* search wrapper */
+        .search-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 0.25rem;
+            border-radius: 2.4rem;
+            color: white;
+        }
+
+        /* search icon & mic button */
+        .icon-btn {
+            background: transparent;
+            border: none;
+            padding: 0.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .icon-btn img {
+            height: 1.2rem;
+            width: auto;
+            display: block;
+
+            /* white icons */
+        }
+
+        /* search input */
+        .search-input {
+            min-width: 18vw;
+            max-width: 36rem;
+            width: 22vw;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 0.95rem;
+            padding: 0.2rem 0.4rem;
+        }
+
+        /* profile button */
+        .profile-btn {
+            height: 2.2rem;
+            width: 2.2rem;
+            border-radius: 50%;
+            border: none;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .profile-btn img {
+            height: 2.2rem;
+
+
+            border-radius: 50%;
+        }
+
+
+        h2 {
+            margin: 0;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: #c2002f;
+        }
+
+        /* 🔹 Hero Banner */
+        .hero-section {
+            width: 100%;
+            padding: 20px;
+            background: #fff;
+        }
+
+        .hero-container {
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-container img {
+            width: 32%;
+            height: 40vh;
+            border-radius: 10px;
+            object-fit: 100%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-container img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 🔹 Content Section */
+        .content-section,
+        .sports-section {
+            padding: 20px 30px;
+            background: #fff;
+            margin-bottom: 15px;
+            border-radius: 7px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+       
+
+        .see-all {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* 🔹 Horizontal scroll rows */
+        .scroll-row,
+        .sports-row {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 10px;
+        }
+
+        .scroll-row::-webkit-scrollbar,
+        .sports-row::-webkit-scrollbar {
+            height: 0px;
+        }
+
+        .scroll-row img {
+            width: 260px;
+            height: 350px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .scroll-row img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .scroll-row.large img {
+            width: 340px;
+            height: 200px;
+        }
+
+        /* 🔹 Sports Section (Round Logos) */
+        .sports-row img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: #fff;
+            object-fit: contain;
+            padding: 10px;
+            flex-shrink: 0;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .sports-row img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 🔹 Responsive Design */
+        @media (min-width: 768px) {
+
+
+            .hero-container img {
+                width: 32%;
+            }
+
+            .nav-inner {
+                width: 86%;
+            }
+
+            .logo {
+                height: 2.6rem;
+            }
+
+            .menu-link {
+                font-size: 1rem;
+            }
+
+            .search-input {
+                width: 18vw;
+                min-width: 14rem;
+            }
+
+            .hello {
+                display: none;
+            }
+             .section-header h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #111;
+        }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .nav-inner {
+                width: 94%;
+            }
+
+            .hello {
+                display: none;
+            }
+
+            .logo {
+                height: 2.4rem;
+            }
+
+            .menu-link {
+                font-size: 0.98rem;
+            }
+
+            .search-input {
+                width: 26vw;
+                min-width: 10rem;
+            }
+
+
+            .hero-container img {
+                width: 48%;
+            }
+
+            .scroll-row img {
+                width: 200px;
+                height: 120px;
+            }
+             .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #111;
+        }
+        }
+
+        @media (max-width: 576px) {
+
+            .nav-inner {
+                width: 98%;
+                padding: 0 0.2rem;
+            }
+
+            .main-menu {
+                display: none;
+            }
+
+            /* hide full menu on small screens */
+            .search-input {
+                display: none;
+            }
+
+            .hello {
+                display: flex;
+                background-color: #aa0023;
+
+                gap: 0.5em;
+                justify-content: center;
+
+            }
+
+            .hello a {
+                font-size: 0.6em;
+            }
+
+            /* compact: hide input on very small screens */
+            .logo {
+                height: 2rem;
+                margin-left: 0;
+            }
+
+            .search-wrap {
+                padding: 0.15rem;
+                border-radius: 2rem;
+            }
+
+              
+            .hero-container{
+               overflow: scroll;
+               flex-wrap: nowrap;
+               
+            }
+
+            .hero-container img {
+                width: 100%;
+            }
+
+            .scroll-row img {
+                width: 180px;
+                height: 250px;
+               
+            }
+
+            .scroll-row.large img {
+                width: 260px;
+                height: 160px;
+            }
+
+            .sports-row img {
+                width: 80px;
+                height: 80px;
+            }
+
+           .section-header h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #111;
+        }
+        }
+
+
+
+
+        .footer {
+            background-color: #f5f5f5;
+            color: #000;
+            padding: 40px 100px;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .footer-column {
+            flex: 0.5 1 180px;
+            min-width: 160px;
+        }
+
+        .footer-column h4 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #111;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #222;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li:hover {
+            color: #c2002f;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .social-icons a {
+            background-color: #c2002f;
+            color: #fff;
+            font-size: 18px;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+
+        .app-links img {
+            width: 120px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+            text-align: center;
+            padding-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* 🔹 Responsive Design */
+        @media (min-width: 768px) {
+            .footer-container {
+                flex-wrap: nowrap;
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .footer-container {
+                justify-content: center;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer {
+                padding: 30px 20px;
+            }
+
+            .footer-column {
+                flex: 1 1 100%;
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .app-links {
+                justify-content: center;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+          
+        }
+
+        @media (min-width: 768px) and (max-width: 1200px) {
+
+            .nav-right {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-inner">
+            <div class="nav-left">
+                <!-- PNG logo (screenshot-style) -->
+                <img class="logo"
+                    src="https://play-lh.googleusercontent.com/iRSc0WcWTD0eyDdAnFW-ORGWWNzKMzvAsuFmItspEd3hqTKn2K71zOqOIHQZmk1N7A"
+                    alt="JioTV logo" /> <span style="font-weight: bold;">JIO TV</span>
+
+                <!-- main menu -->
+                <nav class="main-menu">
+                    <a class="menu-link" href="index.html">For You</a>
+                    <a class="menu-link" href="index.html">TV Guide</a>
+                    <a class="menu-link" href="#">Premium</a>
+                    <a class="menu-link" href="#">Movies</a>
+                    <a class="menu-link active" href="sports.html">Sports</a>
+                    <a class="menu-link" href="#">Specials</a>
+                    <a class="menu-link" href="kidz.html">Kids</a>
+                    <a class="menu-link" href="#">News</a>
+                    <a class="menu-link" href="#">Shows</a>
+                </nav>
+            </div>
+
+
+
+            <div class="nav-right">
+                <div class="search-wrap">
+                    <button class="icon-btn search-icon" aria-hidden="true">
+                        <img src="https://img.icons8.com/?size=100&id=7695&format=png&color=FFFFFF" alt="search" />
+                    </button>
+                    <input class="search-input" type="text" placeholder="Search JioTV" aria-label="Search JioTV" />
+                    <button class="icon-btn mic-icon" aria-hidden="true">
+                        <img src="https://github.com/Jilanmansuri/CGxSU_Semester_1/blob/main/html_css_js/CSS/00.assignment/02.level_2/08.youtube-clone/assets/mic.png?raw=true"
+                            alt="mic" />
+                    </button>
+                </div>
+
+                <button class="profile-btn" aria-label="profile">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.xOngRTGvNQihRmDvtCr23gHaEf?rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="profile" />
+                </button>
+            </div>
+        </div>
+
+
+    </header>
+    <div>
+        <nav class="main-menu hello">
+            <a class="menu-link active" href="index.html">For You</a>
+            <a class="menu-link" href="index.html">TV Guide</a>
+            <a class="menu-link" href="#">Premium</a>
+            <a class="menu-link" href="#">Movies</a>
+            <a class="menu-link" href="sports.html">Sports</a>
+            <a class="menu-link" href="#">Specials</a>
+            <a class="menu-link" href="kidz.html">Kids</a>
+            <a class="menu-link" href="#">News</a>
+            <a class="menu-link" href="#">Shows</a>
+        </nav>
+    </div>
+    <!-- 🔹 HERO BANNER SECTION -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <img src="https://jiotvimages.cdn.jio.com/dare_images/shows/channel/2aa8859883d95801441d4589a472ef0c.png?width=900&optimize=low&format=webp"
+                alt="Asia Cup Final" />
+            <img src="https://jiotvimages.cdn.jio.com/dare_images/shows/channel/e3b71590a73411f0ab84058d3b84f81b_1760250604905_l_medium.jpg?width=900&optimize=low&format=webp"
+                alt="India vs Pakistan" />
+            <img src="https://jiotvimages.cdn.jio.com/dare_images/shows/channel/bf365ce0a9ae11f09b4f5d374ee9a56d_1760522844590_l_medium.jpg?width=900&optimize=low&format=webp"
+                alt="Asia Cricket Celebration" />
+        </div>
+    </section>
+
+    <!-- 🔹 ASIA CRICKET FINAL HIGHLIGHTS -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2>Asia Cricket Final Highlights</h2>
+            <a href="#" class="see-all">See All</a>
+        </div>
+        <div class="scroll-row">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/b4d41c25e80b4ba1abc37e5513eeed6d.jpg?width=216&optimize=low&format=webp"
+                alt="Final 1">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/ba7d5eb65bcdf3c1bfe5a2ef3e9ed127.jpg?width=216&optimize=low&format=webp"
+                alt="Final 2">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/a87c28532b99ece962efcd47fce86abd.jpg?width=216&optimize=low&format=webp"
+                alt="Final 3">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/5d6ef848e9f923ed1a4bb8e1dd43eb75.jpg?width=216&optimize=low&format=webp"
+                alt="Final 4">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/9b3ab29cdc812345373bc4b507934ab7.jpg?width=216&optimize=low&format=webp"
+                alt="Final 5">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/75bd3f801fd707effe98a19e03c0817c.jpg?width=216&optimize=low&format=webp"
+                alt="Final 5">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/75bd3f801fd707effe98a19e03c0817c.jpg?width=216&optimize=low&format=webp"
+                alt="Final 5">
+        </div>
+    </section>
+
+    <!-- 🔹 ASIA CRICKET SUPER FOUR -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2>Asia Cricket Super Four Highlights</h2>
+            <a href="#" class="see-all">See All</a>
+        </div>
+        <div class="scroll-row">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/e356bbf8e8452a45f68bb1af0f04ec47.jpg?width=216&optimize=low&format=webp"
+                alt="Super 1">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/5c2ee7c8510fa3bbf9a179a1ef533aa3.jpg?width=216&optimize=low&format=webp"
+                alt="Super 2">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/b7497f291181c70ed1da9dc6f9ba6403.jpg?width=216&optimize=low&format=webp"
+                alt="Super 3">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/dcc22433b9367f51fbb06314ce88b34c.jpg?width=216&optimize=low&format=webp"
+                alt="Super 4">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/a603c2ba2d01e9b3bb68b5eff5402d2a.jpg?width=216&optimize=low&format=webp"
+                alt="Super 5">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/fc22768e58ba56101b63164aad415ee8.jpg?width=216&optimize=low&format=webp"
+                alt="Super 5">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/fc22768e58ba56101b63164aad415ee8.jpg?width=216&optimize=low&format=webp"
+                alt="Super 5">
+        </div>
+    </section>
+
+    <!-- 🔹 ACC ASIA CRICKET 2025 -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2>ACC Asia Cricket 2025 Highlights</h2>
+            <a href="#" class="see-all">See All</a>
+        </div>
+        <div class="scroll-row">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/7e7b4a3cd290f78303da766d2805ac48.jpg?width=216&optimize=low&format=webp"
+                alt="ACC 1">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/4b6d3628d85bd1596917290266d51a69.jpg?width=216&optimize=low&format=webp"
+                alt="ACC 2">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/4ec25c6bec7f721a070dc4b085a424ee.jpg?width=216&optimize=low&format=webp"
+                alt="ACC 3">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/1d152daf267e3b825191ea228357151a.jpg?width=216&optimize=low&format=webp"
+                alt="ACC 4">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/756dd3c57fad4e21377c617b187c5dd2.jpg?width=216&optimize=low&format=webp"
+                alt="ACC 5">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/0a18bb87530d135b4d23968e6dfe85e8.jpg?width=216&optimize=low&format=webp"
+                alt="ACC 5">
+            <img src="https://jiotvimages.cdn.jio.com/imagespublic/metadata/0a18bb87530d135b4d23968e6dfe85e8.jpg?width=216&optimize=low&format=webp"
+                alt="ACC 5">
+        </div>
+    </section>
+
+    <!-- 🔹 SUPER SPORTS -->
+    <section class="sports-section">
+        <div class="section-header">
+            <h2>Super Sports</h2>
+            <a href="#" class="see-all">See All</a>
+        </div>
+        <div class="sports-row">
+            <img src="https://jiotvimages.cdn.jio.com/dare_images/images/channel/f1b6e0d86a1b64ac1c423b1ffe319483.png?width=400&optimize=low&format=webp"
+                alt="Star Sports">
+            <img src="https://jiotvimages.cdn.jio.com/dare_images/images/channel/3cb0f86e0362eca4d56e489cb48bc7d6.png?width=400&optimize=low&format=webp"
+                alt="Sony Sports">
+            <img src="https://jiotvimages.cdn.jio.com/dare_images/images/channel/987e600ce8221055040b25d6089e1fa8.png?width=400&optimize=low&format=webp"
+                alt="SuperSport">
+            <img src="https://jiotvimages.cdn.jio.com/dare_images/images/channel/829e30ca1caf418ef21bc58f76ba7a1c.png?width=400&optimize=low&format=webp"
+                alt="Eurosport">
+            <img src="https://jiotvimages.cdn.jio.com/dare_images/images/channel/47da9865e89214dc78e073a2a00446cb.png?width=400&optimize=low&format=webp"
+                alt="ESPN">
+            <img src="https://jiotvimages.cdn.jio.com/dare_images/images/channel/51aafced6f7dbe6d3b0b316237051393.png?width=400&optimize=low&format=webp"
+                alt="Cricket AU">
+            <img src="https://jiotvimages.cdn.jio.com/dare_images/images/channel/51aafced6f7dbe6d3b0b316237051393.png?width=400&optimize=low&format=webp"
+                alt="Cricket AU">
+        </div>
+    </section>
+
+    <!-- 🔹 MI TV VIDEOS -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2>MI TV Videos</h2>
+            <a href="#" class="see-all">See All</a>
+        </div>
+        <div class="scroll-row large">
+            <img src="https://jiotvimages.cdn.jio.com/dare_images/shows/category/26f08b101aa111efb942cb29b01737fc_1716646491713.jpg?width=700&optimize=low&format=webp"
+                alt="MI Video 1">
+            <img src="https://jiotvimages.cdn.jio.com/dare_images/shows/category/6b1f44101aa211efbe8403a420c17a67_1716647035601.jpg?width=700&optimize=low&format=webp"
+                alt="MI Video 2">
+            <img src="https://jiotvimages.cdn.jio.com/dare_images/shows/category/28562d301aaf11efa1f58f6cfbc61fd7_1716652507011.jpg?width=700&optimize=low&format=webp"
+                alt="MI Video 3">
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li>Home</li>
+                    <li>Premium</li>
+                    <li>Movies</li>
+                    <li>Sports</li>
+                    <li>Specials</li>
+                    <li>Kids</li>
+                    <li>News</li>
+                    <li>Shows</li>
+                    <li>Assembly Elections</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Top Entertainment Channels</h4>
+                <ul>
+                    <li>Colors HD</li>
+                    <li>SET HD</li>
+                    <li>Colors Cineplex HD</li>
+                    <li>Dangal</li>
+                    <li>Colors Kannada HD</li>
+                    <li>Colors Marathi HD</li>
+                    <li>Sony SAB HD</li>
+                    <li>Sun TV HD</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Top News Channels</h4>
+                <ul>
+                    <li>Aaj Tak</li>
+                    <li>India TV</li>
+                    <li>ABP News India</li>
+                    <li>Republic Bharat</li>
+                    <li>News 18 India</li>
+                    <li>TV9 Bharatvarsh</li>
+                    <li>TV9 Telugu News</li>
+                    <li>TV9 Kannada</li>
+                    <li>Zee News</li>
+                    <li>Zee Business</li>
+                    <li>News 24</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Top Sports Channels</h4>
+                <ul>
+                    <li>Sports18 1 HD</li>
+                    <li>Sports18 2</li>
+                    <li>Sony Ten 1 HD</li>
+                    <li>Sports18 Khel</li>
+                    <li>Sony Ten 1</li>
+                    <li>Sony Ten 5 HD</li>
+                    <li>Jio Cricket English HD</li>
+                    <li>Eurosport HD</li>
+                    <li>Brave TV</li>
+                    <li>Sony Ten 3 HD Hindi</li>
+                </ul>
+            </div>
+
+            <div class="footer-column social">
+                <h4>Connect with us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-youtube"></i></a>
+                </div>
+                <h4>Download Our App</h4>
+                <div class="app-links">
+                    <img src="https://www.jiotv.com/images/play-store.png" alt="Google Play">
+                    <img src="https://www.jiotv.com/images/app-store.png" alt="App Store">
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Reliance JioTV. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

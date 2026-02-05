@@ -1,0 +1,398 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.navbar {
+    width: 100vw;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+
+@media (max-width: 576px) {
+
+    .backimage {
+        height: 20vh;
+        background-size: cover;
+        font-size: 2em;
+        /* background-size: 100%; */
+    }
+
+    #navbar {
+        width: 90vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding-left: 1em;
+        padding-right: 1em;
+        height: 3em;
+    }
+
+
+    .logo {
+
+        font-size: 2.1rem;
+        color: blue;
+        font-weight: 600;
+    }
+
+    .right-sidenav {
+        font-size: 1rem;
+        font-weight: 600;
+        display: flex;
+        gap: 1em;
+
+    }
+
+    footer {
+        align-items: center;
+        margin-top: 4rem;
+        background-color: #1e1e1e;
+        color: white;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+
+    }
+
+    .foot {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+        width: 87vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
+    .social {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 1em;
+    }
+
+    .social div {
+        display: flex;
+
+        gap: 1.5em;
+    }
+
+    .copyright {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .service {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    .middle {
+        display: flex;
+        width: 86vw;
+        flex-wrap: wrap;
+        flex-direction: column;
+        background-color: rgb(245, 233, 235);
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-between;
+        align-items: center;
+
+
+    }
+
+    .left {
+        width: 100%;
+    }
+
+    .right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2em;
+        align-items: center;
+    }
+
+    .p2 {
+        text-align: center;
+    }
+
+
+
+}
+
+
+@media (min-width:780px) {
+
+    .backimage {
+        height: 70vh;
+        background-size: cover;
+        font-size: 3.5em;
+    }
+
+    .logo {
+
+        font-size: 3.2rem;
+        color: blue;
+        font-weight: 600;
+    }
+
+    #navbar {
+        width: 96vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding-left: 1em;
+        padding-right: 1em;
+        height: 5em;
+    }
+
+    .right-sidenav {
+        font-size: 1.2rem;
+        font-weight: 600;
+        display: flex;
+        gap: 2em;
+
+    }
+
+    footer {
+        margin-top: 4rem;
+        background-color: #1e1e1e;
+        color: white;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+
+    }
+
+    .foot {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 87vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
+    .social {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .social div {
+        display: flex;
+        gap: 1.5em;
+    }
+
+    .copyright {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .service {
+        display: flex;
+        gap: 1.5em;
+    }
+
+    .left {
+        width: 53%;
+    }
+
+    .right {
+        width: 43%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2em;
+    }
+
+    .right2 {
+        width: 43%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 2em;
+    }
+}
+
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+.service li {
+    list-style: none;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.backimage {
+    width: 100vw;
+    /* height: 550px; */
+    /* background-image: url('https://cdn.prod.website-files.com/66ba0cbc63210953b4fc73a8/66c86592baefa425f1780757_games_page_hero%202.webp'); */
+background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://cdn.prod.website-files.com/66ba0cbc63210953b4fc73a8/66c86592baefa425f1780757_games_page_hero%202.webp")center/cover no-repeat;
+    background-repeat: no-repeat;
+
+    font-weight: 700;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.found {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 100vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.btn {
+    width: 11em;
+    padding: 1.2em;
+    border-radius: 1.6em;
+    background-color: blue;
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 0.9rem;
+}
+
+
+
+.p1 {
+    text-align: center;
+    max-width: 50vw;
+    font-size: 1.1em;
+}
+
+.middle {
+    display: flex;
+    width: 86vw;
+    background-color: rgb(245, 233, 235);
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+
+
+}
+
+.middle2 {
+    margin-top: 5em;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 86vw;
+    background-color: rgb(245, 233, 235);
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-evenly;
+
+
+}
+
+.middle img {
+    width: 100%;
+
+}
+
+
+
+.p2 {
+    max-width: 600px;
+    font-size: 1.2em;
+}
+
+
+
+.apple {
+    width: 350px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.apple img {
+    width: 170px;
+    height: 100%;
+
+}
+
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 10;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #f5f5f5;
+  border-radius: 6px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}

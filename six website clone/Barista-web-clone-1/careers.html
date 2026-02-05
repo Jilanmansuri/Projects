@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers</title>
+      <link rel="icon" type="image/png" href="https://th.bing.com/th/id/R.389b48c8cb8e6d183ed3105ffa529f42?rik=2NTRP9az8yPF4A&riu=http%3a%2f%2fstores.barista.co.in%2fwp-content%2fuploads%2f2024%2f04%2fBarista-Circle-Logo-PNG-1000x1000-1.png&ehk=E2WCnkGV0sulMQu9w8bWPzg4LqnxWmfTGByvUErdnGU%3d&risl=&pid=ImgRaw&r=0">
+
+    <style>
+        body {
+            background-color: #EFE3D5;
+            color: #3c2a23;
+            line-height: 1.6;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #4C3935;
+            border-radius: 8px;
+        }
+
+        body::-webkit-scrollbar {
+            width: 8px;
+            background: #F5F5F5;
+        }
+
+
+        body::-webkit-scrollbar:horizontal {
+            display: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background-color: #f4e4d7;
+
+            position: sticky;
+            top: 0;
+        }
+
+        .logo img {
+            height: 45px;
+            max-width: 150px;
+        }
+
+        .nav-links {
+            display: flex;
+
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #3c2a23;
+            font-weight: 550;
+            transition: color 0.3s;
+            font-size: 1.15em;
+
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #e85a2a;
+        }
+
+
+
+
+        /* -----------------------------------------------------Footer--------------------------------------- */
+        .logo2 img {
+            width: 200px;
+        }
+
+        .logo2 {
+            width: 200px;
+        }
+
+        footer {
+            width: 100vw;
+            
+            background: #4C3935;
+            color: #fff;
+            padding-top: 3em;
+            padding-bottom: 3em;
+        }
+
+        .footer-top {
+            display: flex;
+            width: 74vw;
+            margin-left: 13vw;
+            justify-content: space-between;
+            gap: 5em;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            font-size: 1.3em;
+        }
+
+        .footer-columns h4 {
+            margin-bottom: 10px;
+            color: #e14b2b;
+        }
+
+        .footer-columns a {
+            font-size: 0.8em;
+            line-height: 2.3;
+            color: white;
+            font-weight: 400;
+            text-decoration: none;
+            display: block;
+        }
+
+        .footer-columns a:hover {
+            color: #F26644;
+        }
+
+        .copyright {
+            font-size: 1em;
+            color: white;
+            margin-top: 5em;
+            margin-left: 13vw;
+        }
+
+
+         .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6vh 13vw;
+            background-color: #F4E4D7;
+        }
+
+        .hero-text {
+            flex: 1 1 40%;
+        }
+
+        .hero-text h2 {
+            font-size: 2.2rem;
+            color: #2f2f2f;
+            margin-bottom: 0.5em;
+        }
+
+        .hero-text h2 span {
+            color: #e85a2a;
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            font-weight: 550;
+        }
+
+        .hero-right {
+            flex: 1 1 45%;
+            text-align: right;
+        }
+
+        .hero-right h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #4c3935;
+        }
+
+        .hero-right h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #e85a2a;
+        }
+
+        .hero-right img {
+            width: 20vw;
+           
+            margin-top: 1.5em;
+        }
+
+        /* --------------------- Latest Job Section ---------------------- */
+        .jobs {
+            text-align: center;
+            background-color: #Fdf6f1;
+            padding: 5vh 10vw;
+        }
+
+        .job-banner {
+            background-color: #213A2A;
+            color: white;
+            border-radius: 2em;
+            padding: 2vh 4vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 70vw;
+            margin: 0 auto;
+        }
+
+        .job-banner h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .job-banner p {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .job-btn {
+            background-color: #e85a2a;
+            color: white;
+            border: none;
+            padding: 0.7em 2em;
+            border-radius: 1.5em;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .job-btn:hover {
+            background-color: #ff6b3d;
+        }
+
+        /* --------------------- Content Section ---------------------- */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 4vw;
+            padding: 8vh 10vw;
+            background-color: #FDF6F1;
+        }
+
+        .section {
+            flex: 1 1 45%;
+            max-width: 500px;
+        }
+
+        .section img {
+            width: 100%;
+            border-radius: 1.5em;
+            box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.15);
+        }
+
+        .section h3 {
+            margin-top: 1.5em;
+            color: #e85a2a;
+            font-size: 1.5rem;
+        }
+
+        .section h3 span {
+            color: #213A2A;
+        }
+
+        .section p {
+            margin-top: 1em;
+            font-size: 1rem;
+            color: #3c2a23;
+        }
+
+        .hello{
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 8em;
+        }
+
+
+
+
+        /* Responsive Design */
+        @media (max-width: 576px) {
+            .navbar {
+                display: flex;
+                flex-direction: row;
+                text-align: center;
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-direction: row;
+                gap: 8px;
+            }
+
+            .nav-links a {
+                font-size: 6px;
+            }
+
+            .logo {
+                width: 15px;
+            }
+
+            .logo img {
+                height: 15px;
+
+            }
+
+
+            .footer-top {
+                flex-direction: column;
+                width: 95%;
+                margin-left: auto;
+                margin-right: auto;
+                gap: 2em;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                gap: 1em;
+                font-size: 1rem;
+            }
+
+            .copyright {
+                margin-left: 0;
+                text-align: center;
+                font-size: 0.7em;
+            }
+
+             .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 5vh 5vw;
+            }
+
+            .hero-text h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero-right h3 {
+                font-size: 1rem;
+            }
+
+            .hero-right h1 {
+                font-size: 2rem;
+            }
+
+            .hero-right img {
+                width: 60vw;
+            }
+
+            .job-banner {
+                flex-direction: column;
+                text-align: center;
+                gap: 1em;
+                max-width: 90vw;
+            }
+
+            .job-banner h3 {
+                font-size: 1rem;
+            }
+
+            .content {
+                flex-direction: column;
+                padding: 6vh 5vw;
+            }
+
+            .section {
+                width: 100%;
+                text-align: center;
+            }
+
+            .section img {
+                width: 80%;
+            }
+
+
+        }
+
+
+
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 12px 6%;
+                font-size: 0.7;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .middle {
+                flex-direction: column;
+                padding: 50px 8%;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .copyright {
+                margin-left: 0;
+                text-align: center;
+            }
+
+             .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 6vh 8vw;
+            }
+
+            .hero-right img {
+                width: 40vw;
+            }
+
+            .job-banner {
+                flex-direction: column;
+                gap: 1em;
+                max-width: 85vw;
+            }
+
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section {
+                max-width: 80%;
+            }
+        }
+
+
+        @media (min-width: 768px) {
+            .rightlogo {
+                width: 16vw;
+                background-color: bisque;
+                padding: 0.8em 2em;
+                border-bottom-left-radius: 40px;
+                position: relative;
+                bottom: 6px;
+            }
+
+            .rightlogo img {
+                width: 90px;
+            }
+
+            .logo {
+                margin-left: 13vw;
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                width: 100vw;
+                height: 9vh;
+
+                overflow: hidden;
+                align-items: center;
+                padding: 0;
+                z-index: 100;
+                position: sticky;
+                top: 0;
+                background-color: white;
+                font-size: .9em;
+
+            }
+
+              .hero {
+                flex-direction: row;
+            }
+
+            .hero-right img {
+                width: 30vw;
+            }
+
+            .job-banner {
+                flex-direction: row;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="https://www.barista.co.in/themes/custom/barista/img/logo.svg"
+                    alt="Barista Logo"></a>
+        </div>
+        <div class="nav-links">
+            <a href="story.html">Our Story</a>
+            <a href="store-locator.html">Store Locator</a>
+            <a href="Franchise with us.html">Franchise with us</a>
+            <a href="Alliances.html">Alliances</a>
+            <a href="Be a Barista.html">Be a Barista</a>
+            <a href="Coffee Vending.html">Coffee Vending</a>
+            <a href="careers.html" class="active">Careers</a>
+            <a href="shop.html">Shop</a>
+        </div>
+        <div class="rightlogo">
+            <img src="https://www.barista.co.in/themes/custom/barista/img/logo-diner.svg" alt="">
+        </div>
+
+    </div>
+
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2>We are <span>Passionate</span></h2>
+            <p>IF YOU ARE TOO; WE ARE LOOKING FOR YOU! 👋</p>
+        </div>
+        <div class="hero-right">
+            
+            <img src="https://www.barista.co.in/sites/default/files/HR_Join_Us.png" alt="Join Barista">
+        </div>
+    </section>
+
+    <!-- Job Section -->
+    <section class="jobs">
+        <div class="job-banner">
+            <div>
+                <h3>LATEST JOB OPPORTUNITIES</h3>
+                <p>Become a part of the fastest growing cafe chain of India.</p>
+            </div>
+            <button class="job-btn">Job List</button>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content">
+        <div class="section">
+            <img src="https://www.barista.co.in/themes/custom/barista/img/Why-Us.jpg" alt="Why Us">
+            <h3>Why <span>Us?</span></h3>
+            <p>Are you looking to become a part of the coffee culture in India? Look no further than Barista! We offer
+                the highest quality coffee, celebrate people connections, and create value for our employees with
+                rewards and benefits. Join us today!</p>
+        </div>
+        <div class="section hello">
+           <div> <img src="https://www.barista.co.in/sites/default/files/Career-1.jpg" alt="Barista Team"></div>
+           <div> <h3>Work Be <span>Fun!</span></h3>
+            <p>Working at Barista Coffee can be an exciting and fun experience. We offer a friendly and creative
+                environment that encourages collaboration. Whether you’re looking for a part-time or full-time career,
+                Barista Coffee is the place to be!</p></div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="logo2">
+                <img src="https://www.barista.co.in/themes/custom/barista/img/footer-logo.svg"
+                    alt="Barista Footer Logo">
+            </div>
+            <div class="footer-columns">
+                <div>
+                    <h4>Menu</h4>
+                    <a href="#">What's new</a>
+                    <a href="#">Drinks</a>
+                    <a href="#">Food</a>
+                </div>
+                <div>
+                    <h4>Get to know us</h4>
+                    <a href="#">Contact us</a>
+                    <a href="#">Store Locator</a>
+                    <a href="#">Investor’s Relations</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <a href="#">Be our Distributor</a>
+                    <a href="#">Franchise with Us!</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Be a Barista</a>
+                </div>
+                <div>
+                    <h4>Connect with us</h4>
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <hr style="margin-top: 3em; width: 74vw; margin-left: auto; margin-right: auto; opacity: 0.5;">
+        <p class="copyright">Copyright © 2023 baristacoffee. All Rights Reserved.</p>
+    </footer>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franchise With Us</title>
+    <link rel="icon" type="image/png" href="https://th.bing.com/th/id/R.389b48c8cb8e6d183ed3105ffa529f42?rik=2NTRP9az8yPF4A&riu=http%3a%2f%2fstores.barista.co.in%2fwp-content%2fuploads%2f2024%2f04%2fBarista-Circle-Logo-PNG-1000x1000-1.png&ehk=E2WCnkGV0sulMQu9w8bWPzg4LqnxWmfTGByvUErdnGU%3d&risl=&pid=ImgRaw&r=0">
+    <style>
+        body {
+            background-color: #EFE3D5;
+            color: #3c2a23;
+            line-height: 1.6;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #4C3935;
+            border-radius: 8px;
+        }
+
+        body::-webkit-scrollbar {
+            width: 8px;
+            background: #F5F5F5;
+        }
+
+
+        body::-webkit-scrollbar:horizontal {
+            display: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background-color: #f4e4d7;
+
+            position: sticky;
+            top: 0;
+        }
+
+        .logo img {
+            height: 45px;
+            max-width: 150px;
+        }
+
+        .nav-links {
+            display: flex;
+
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #3c2a23;
+            font-weight: 550;
+            transition: color 0.3s;
+            font-size: 1.15em;
+
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #e85a2a;
+        }
+
+
+
+
+        /* -----------------------------------------------------Footer--------------------------------------- */
+        .logo2 img {
+            width: 200px;
+        }
+
+        .logo2 {
+            width: 200px;
+        }
+
+        footer {
+            width: 100vw;
+            margin-top: 4em;
+            background: #4C3935;
+            color: #fff;
+            padding-top: 3em;
+            padding-bottom: 3em;
+        }
+
+        .footer-top {
+            display: flex;
+            width: 74vw;
+            margin-left: 13vw;
+            justify-content: space-between;
+            gap: 5em;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            font-size: 1.3em;
+        }
+
+        .footer-columns h4 {
+            margin-bottom: 10px;
+            color: #e14b2b;
+        }
+
+        .footer-columns a {
+            font-size: 0.8em;
+            line-height: 2.3;
+            color: white;
+            font-weight: 400;
+            text-decoration: none;
+            display: block;
+        }
+
+        .footer-columns a:hover {
+            color: #F26644;
+        }
+
+        .copyright {
+            font-size: 1em;
+            color: white;
+            margin-top: 5em;
+            margin-left: 13vw;
+        }
+
+
+
+        /* Responsive Design */
+        @media (max-width: 576px) {
+            .navbar {
+                display: flex;
+                flex-direction: row;
+                text-align: center;
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-direction: row;
+                gap: 8px;
+            }
+
+            .nav-links a {
+                font-size: 6px;
+            }
+
+            .logo {
+                width: 15px;
+            }
+
+            .logo img {
+                height: 15px;
+
+            }
+
+
+            .footer-top {
+                flex-direction: column;
+                width: 95%;
+                margin-left: auto;
+                margin-right: auto;
+                gap: 2em;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                gap: 1em;
+                font-size: 1rem;
+            }
+
+            .copyright {
+                margin-left: 0;
+                text-align: center;
+                font-size: 0.7em;
+            }
+        }
+
+
+
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 12px 6%;
+                font-size: 0.7;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .middle {
+                flex-direction: column;
+                padding: 50px 8%;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .copyright {
+                margin-left: 0;
+                text-align: center;
+            }
+        }
+
+
+        @media (min-width: 768px) {
+            .rightlogo {
+                width: 16vw;
+                background-color: bisque;
+                padding: 0.8em 2em;
+                border-bottom-left-radius: 40px;
+                position: relative;
+                bottom: 6px;
+            }
+
+            .rightlogo img {
+                width: 90px;
+            }
+
+            .logo {
+                margin-left: 13vw;
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                width: 100vw;
+                height: 9vh;
+
+                overflow: hidden;
+                align-items: center;
+                padding: 0;
+                z-index: 100;
+                position: sticky;
+                top: 0;
+                background-color: white;
+                font-size: .9em;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="https://www.barista.co.in/themes/custom/barista/img/logo.svg"
+                    alt="Barista Logo"></a>
+        </div>
+        <div class="nav-links">
+            <a href="story.html">Our Story</a>
+            <a href="store-locator.html">Store Locator</a>
+            <a href="Franchise with us.html" class="active">Franchise with us</a>
+            <a href="Alliances.html">Alliances</a>
+            <a href="Be a Barista.html">Be a Barista</a>
+            <a href="Coffee Vending.html">Coffee Vending</a>
+            <a href="careers.html">Careers</a>
+            <a href="shop.html">Shop</a>
+        </div>
+        <div class="rightlogo">
+            <img src="https://www.barista.co.in/themes/custom/barista/img/logo-diner.svg" alt="">
+        </div>
+
+    </div>
+
+
+
+    <section class="container franchise-section">
+        <div class="franchise-text">
+            <h2>Franchise with us</h2>
+            <p>If you are looking for a rewarding investment and want to start your own business? You are at the right
+                place! Become a part of the Barista Brewing Family. We are expanding rapidly and we would be delighted
+                for you to join us in this journey. As a Barista franchise, all the processes become much easier.
+            <p>
+            <p>We assist our franchise partners at all stages of starting the business and provide complete support in
+                Cafe design and layout, Support/vendor negotiations in the sourcing of equipment; Food and Menu
+                development; Training of staff, and establishing operations under the guidance of our seasoned manager;
+                Marketing support around launch and post-launch of café and much more.
+
+            </p>
+            <p> Join us in the journey of brewing experiences, and freshness accompanied by its perfect companions to
+                enjoy along with captive audiences all across. Your efforts will be rewarded. Don't miss out on this
+                amazing opportunity because we make your Investments more rewarding.</p>
+        </div>
+        <div class="franchise-image">
+            <img src="https://www.barista.co.in/sites/default/files/Franchise%20Post.webp" alt="Barista Café" />
+        </div>
+    </section>
+
+    <section class="community-section">
+        <div class="container community-grid">
+            <div class="community-images">
+                <div class="hello"> <img src="https://www.barista.co.in/sites/default/files/2023-07/DSC09956.webp"
+                        alt="Coffee Community 1" />
+                    <img src="https://www.barista.co.in/sites/default/files/2023-07/12%20%281%29.webp"
+                        alt="Coffee Community 2" />
+                </div>
+
+                <div class="big"><img src="https://www.barista.co.in/sites/default/files/2023-07/13.webp" alt=""></div>
+            </div>
+
+            <div class="community-text">
+                <h3>Join Our Coffee Community</h3>
+                <p>When you decide to franchise with us, you become part of a growing coffee community across the globe.
+                    Barista Coffee Company is the pioneer of café culture in India.</p>
+                <button class="btn">Get in Touch</button>
+                <div class="features">
+                    <div>Brand Lineage</div>
+                    <div>Best Investment Opportunity</div>
+                    <div>Scalability</div>
+                    <div>Ease of Operation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container testimonials">
+        <h2>Franchise Testimonials</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <img src="https://www.barista.co.in/sites/default/files/2023-06/testimnls-2.jpg"
+                    alt="Mr. Gurpreet SIngh" />
+                <h4>Mr. Gurpreet Singh</h4>
+                <p>Franchise Partner, Jammu</p>
+                <p>With a passion for Food and Beverages, I started my journey with Barista in 2011...</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="https://www.barista.co.in/sites/default/files/2023-06/testimnls-1.jpg"
+                    alt="Mr. Gautam Dutta" />
+                <h4>Mr. Gautam Dutta</h4>
+                <p>Franchise Partner, Guwahati</p>
+                <p>I have a long story with Barista and was always a fan of the brand...</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="https://www.barista.co.in/sites/default/files/2023-07/Ms.-Sanghamitra-Sarcar%2C-Franchisee-Partner%2C-Barista-Diner%2C-Starling-Mall.png"
+                    alt="Ms. Sanehamitra Sarcar" />
+                <h4>Ms. Sanehamitra Sarcar</h4>
+                <p>Franchise Partner, Starling Mall</p>
+                <p>A Chartered Accountant by profession, having 25 years of experience...</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="https://www.barista.co.in/sites/default/files/2023-07/Mr.-Manish-Kabra%2C-Franchisee-Partner%2C-Patna-%26-Lucknow.jpg"
+                    alt="Mr. Manish Kabra" />
+                <h4>Mr. Manish Kabra</h4>
+                <p>Franchise Partner, Patna & Lucknow</p>
+                <p>“Life is a journey and only you make the map.”</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="logo2">
+                <img src="https://www.barista.co.in/themes/custom/barista/img/footer-logo.svg"
+                    alt="Barista Footer Logo">
+            </div>
+            <div class="footer-columns">
+                <div>
+                    <h4>Menu</h4>
+                    <a href="#">What's new</a>
+                    <a href="#">Drinks</a>
+                    <a href="#">Food</a>
+                </div>
+                <div>
+                    <h4>Get to know us</h4>
+                    <a href="#">Contact us</a>
+                    <a href="#">Store Locator</a>
+                    <a href="#">Investor’s Relations</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <a href="#">Be our Distributor</a>
+                    <a href="#">Franchise with Us!</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Be a Barista</a>
+                </div>
+                <div>
+                    <h4>Connect with us</h4>
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <hr style="margin-top: 3em; width: 74vw; margin-left: auto; margin-right: auto; opacity: 0.5;">
+        <p class="copyright">Copyright © 2023 baristacoffee. All Rights Reserved.</p>
+    </footer>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    h2,
+    h3 {
+        color: #1a3c34;
+    }
+
+    p {
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .container {
+        width: 90vw;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* ---------- Franchise Section ---------- */
+    .franchise-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5vh 0;
+        gap: 3rem;
+    }
+
+    .franchise-text {
+        flex: 1 1 45%;
+        font-size: 1rem;
+    }
+
+    .franchise-text h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .franchise-text p {
+        margin-top: 1em;
+    }
+
+    .franchise-image {
+        flex: 1 1 45%;
+    }
+
+    .franchise-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+    }
+
+    /* ---------- Coffee Community ---------- */
+    .community-section {
+        background-color: #fff5ee;
+        padding: 6vh 0;
+    }
+
+    .community-grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .community-images {
+
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+
+        flex-direction: column;
+    }
+
+    .hello {
+        display: flex;
+        width: 35vw;
+        height: 130px;
+        gap: 1.5em;
+
+    }
+
+    .hello img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .big {
+        margin-top: 1.5em;
+        width: 100%;
+    }
+
+    .big img {
+        width: 100%;
+    }
+
+
+
+    .community-images img {
+        width: 100%;
+
+
+        border-radius: 1rem;
+
+    }
+
+    .community-text {
+        width: 50%;
+        flex: 1 1 40%;
+    }
+
+    .community-text h3 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .community-text p {
+        margin-bottom: 2rem;
+        font-size: 1.3em;
+    }
+
+    .btn {
+        background: #004a46;
+        color: #fff;
+        padding: 20px 50px;
+        border: none;
+        border-radius: 15px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 5px 5px 1px #e85a2a;
+    }
+
+    .btn:hover {
+        background: #f15b3a;
+        box-shadow: none;
+    }
+
+    .features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 2rem;
+        color: #004e3d;
+        font-weight: 500;
+    }
+
+    .features div::before {
+        content: "☕ ";
+    }
+
+    /* ---------- Testimonials ---------- */
+    .testimonials {
+        padding: 6vh 0;
+    }
+
+    .testimonials h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        gap: 2rem;
+    }
+
+    .testimonial-card {
+        background-color: #fff;
+        border-radius: 1rem;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-card img {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1.5rem;
+    }
+
+    .testimonial-card h4 {
+        margin-bottom: 0.5rem;
+        color: #004e3d;
+    }
+
+    .testimonial-card p {
+        font-size: 0.9rem;
+        color: #555;
+    }
+
+    .read-more {
+        margin-top: 1rem;
+        display: inline-block;
+        color: #e34c26;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+
+        .franchise-section,
+        .community-grid {
+            flex-direction: column;
+        }
+
+        .franchise-text,
+        .franchise-image,
+        .community-text,
+        .community-images {
+            flex: 1 1 100%;
+        }
+
+        .franchise-text h2 {
+            font-size: 1.6rem;
+        }
+
+        .community-text h3 {
+            font-size: 1.4rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        body {
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            padding: 0.6em 1.5em;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-card {
+            padding: 1.5rem;
+        }
+
+        .community-section {
+            background-color: #fff5ee;
+            padding: 6vh 0;
+            
+        }
+
+        .community-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .community-images {
+
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            flex-direction: column;
+        }
+
+        .hello {
+            display: flex;
+            width: 45vw;
+            height: 130px;
+            gap: 1.5em;
+
+        }
+
+        .hello img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .big {
+            margin-top: 1.5em;
+            width: 100%;
+        }
+
+        .big img {
+            width: 100%;
+        }
+
+
+
+        .community-images img {
+            width: 100%;
+
+
+            border-radius: 1rem;
+
+        }
+
+         .community-text {
+        width: 100%;
+        flex: 1 1 40%;
+    }
+
+    }
+</style>

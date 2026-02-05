@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be a Barista</title>
+    <link rel="icon" type="image/png"
+        href="https://th.bing.com/th/id/R.389b48c8cb8e6d183ed3105ffa529f42?rik=2NTRP9az8yPF4A&riu=http%3a%2f%2fstores.barista.co.in%2fwp-content%2fuploads%2f2024%2f04%2fBarista-Circle-Logo-PNG-1000x1000-1.png&ehk=E2WCnkGV0sulMQu9w8bWPzg4LqnxWmfTGByvUErdnGU%3d&risl=&pid=ImgRaw&r=0">
+    <style>
+        body {
+            background-color: #fff0e2;
+            color: #3c2a23;
+            line-height: 1.6;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #4C3935;
+            border-radius: 8px;
+        }
+
+        body::-webkit-scrollbar {
+            width: 8px;
+            background: #F5F5F5;
+        }
+
+
+        body::-webkit-scrollbar:horizontal {
+            display: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background-color: #f4e4d7;
+
+            position: sticky;
+            top: 0;
+        }
+
+        .logo img {
+            height: 45px;
+            max-width: 150px;
+        }
+
+        .nav-links {
+            display: flex;
+
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #3c2a23;
+            font-weight: 550;
+            transition: color 0.3s;
+            font-size: 1.15em;
+
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #e85a2a;
+        }
+
+
+
+
+        /* -----------------------------------------------------Footer--------------------------------------- */
+        .logo2 img {
+            width: 200px;
+        }
+
+        .logo2 {
+            width: 200px;
+        }
+
+        .story-section {
+            text-align: center;
+            padding: 80px 10% 140px;
+            background-color: #fff5ec;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-section h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-family: "Hobeaux", sans-serif;
+        }
+
+        .story-section p {
+            max-width: 1000px;
+            margin: auto;
+            font-size: 1.4em;
+        }
+
+
+        .middle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 60px 10%;
+            background-color: #fff0e2;
+        }
+
+        .middle-text {
+            flex: 1 1 400px;
+        }
+
+        .middle-text p {
+            font-size: 1.5em;
+        }
+
+        .middle-text .p3 {
+            color: #e85a2a;
+            font-weight: 700;
+            font-size: 2em;
+        }
+
+        .middle-img {
+            flex: 1 1 350px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .middle-img img {
+            max-width: 100%;
+            border-radius: 20px;
+        }
+
+
+        footer {
+            width: 100vw;
+            margin-top: 4em;
+            background: #4C3935;
+            color: #fff;
+            padding-top: 3em;
+            padding-bottom: 3em;
+        }
+
+        .footer-top {
+            display: flex;
+            width: 74vw;
+            margin-left: 13vw;
+            justify-content: space-between;
+            gap: 5em;
+        }
+
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            font-size: 1.3em;
+        }
+
+        .footer-columns h4 {
+            margin-bottom: 10px;
+            color: #e14b2b;
+        }
+
+        .footer-columns a {
+            font-size: 0.8em;
+            line-height: 2.3;
+            color: white;
+            font-weight: 400;
+            text-decoration: none;
+            display: block;
+        }
+
+        .footer-columns a:hover {
+            color: #F26644;
+        }
+
+        .copyright {
+            font-size: 1em;
+            color: white;
+            margin-top: 5em;
+            margin-left: 13vw;
+        }
+
+
+
+        /* Responsive Design */
+        @media (max-width: 576px) {
+            .navbar {
+                display: flex;
+                flex-direction: row;
+                text-align: center;
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-direction: row;
+                gap: 8px;
+            }
+
+            .nav-links a {
+                font-size: 6px;
+            }
+
+            .logo {
+                width: 15px;
+            }
+
+            .logo img {
+                height: 15px;
+
+            }
+
+            .story-section {
+                padding: 60px 5% 100px;
+            }
+
+            .story-section h1 {
+                font-size: 2em;
+            }
+
+            .middle {
+                flex-direction: column;
+                padding: 40px 5%;
+            }
+
+
+            .footer-top {
+                flex-direction: column;
+                width: 95%;
+                margin-left: auto;
+                margin-right: auto;
+                gap: 2em;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                gap: 1em;
+                font-size: 1rem;
+            }
+
+            .copyright {
+                margin-left: 0;
+                text-align: center;
+                font-size: 0.7em;
+            }
+        }
+
+
+
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 12px 6%;
+                font-size: 0.7;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .middle {
+                flex-direction: column;
+                padding: 50px 8%;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .copyright {
+                margin-left: 0;
+                text-align: center;
+            }
+        }
+
+
+        @media (min-width: 768px) {
+            .rightlogo {
+                width: 16vw;
+                background-color: bisque;
+                padding: 0.8em 2em;
+                border-bottom-left-radius: 40px;
+                position: relative;
+                bottom: 6px;
+            }
+
+            .rightlogo img {
+                width: 90px;
+            }
+
+            .logo {
+                margin-left: 13vw;
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                width: 100vw;
+                height: 9vh;
+
+                overflow: hidden;
+                align-items: center;
+                padding: 0;
+                z-index: 100;
+                position: sticky;
+                top: 0;
+                background-color: white;
+                font-size: .9em;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="https://www.barista.co.in/themes/custom/barista/img/logo.svg"
+                    alt="Barista Logo"></a>
+        </div>
+        <div class="nav-links">
+            <a href="story.html">Our Story</a>
+            <a href="store-locator.html">Store Locator</a>
+            <a href="Franchise with us.html">Franchise with us</a>
+            <a href="Alliances.html">Alliances</a>
+            <a href="Be a Barista.html" class="active">Be a Barista</a>
+            <a href="Coffee Vending.html">Coffee Vending</a>
+            <a href="careers.html">Careers</a>
+            <a href="shop.html">Shop</a>
+        </div>
+        <div class="rightlogo">
+            <img src="https://www.barista.co.in/themes/custom/barista/img/logo-diner.svg" alt="">
+        </div>
+
+    </div>
+
+
+    <section class="story-section">
+        <h1>Be a Barista</h1>
+        <p>
+            Immerse yourself in the world of coffee mastery with our 21-days Physical Barista Training Program. From
+            hands-on learning in a real café environment to expert guidance from seasoned professionals, unlock the art
+            of barista craftsmanship. Receive a Certificate upon the completion of Training Program. Register now to
+            secure your spot and brew your path to excellence! Program fee: Rs 15,000 + 18% GST
+        </p>
+        <p>If you want to Enroll please click <span style="color: blue;"> here</span></p>
+    </section>
+
+
+
+    <!-- Middle Section -->
+    <section class="middle">
+        <div class="middle-text">
+            <p>
+                Today, as we continue to brew your favorite coffee and take time to enhance customer experience, we have
+                created coffee relationship with our patrons over 120 cities.
+            </p>
+            <p class="p3"><span>PIONEER OF COFFEE <span style="color: black;">CULTURE.</span></span></p>
+        </div>
+        <div class="middle-img">
+            <img src="https://barista.co.in/sites/default/files/cutout%20Image%20girl%20website.png"
+                alt="Barista employee holding coffee">
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="logo2">
+                <img src="https://www.barista.co.in/themes/custom/barista/img/footer-logo.svg"
+                    alt="Barista Footer Logo">
+            </div>
+            <div class="footer-columns">
+                <div>
+                    <h4>Menu</h4>
+                    <a href="#">What's new</a>
+                    <a href="#">Drinks</a>
+                    <a href="#">Food</a>
+                </div>
+                <div>
+                    <h4>Get to know us</h4>
+                    <a href="#">Contact us</a>
+                    <a href="#">Store Locator</a>
+                    <a href="#">Investor’s Relations</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <a href="#">Be our Distributor</a>
+                    <a href="#">Franchise with Us!</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Be a Barista</a>
+                </div>
+                <div>
+                    <h4>Connect with us</h4>
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <hr style="margin-top: 3em; width: 74vw; margin-left: auto; margin-right: auto; opacity: 0.5;">
+        <p class="copyright">Copyright © 2023 baristacoffee. All Rights Reserved.</p>
+    </footer>
+
+
+</body>
+
+</html>
