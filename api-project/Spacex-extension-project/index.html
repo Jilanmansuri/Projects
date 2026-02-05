@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SpaceX Table</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <h3>Specex Mission Details</h3>
+  <p>Choose your Filter</p>
+
+  <div class="container">
+
+    <div class="buttons">
+
+      <select id="filterSelect">
+        <option id="all" value="all">All</option>
+        <option id="past" value="past">Past</option>
+        <option id="upcoming" value="upcoming">Upcoming</option>
+        <option id="success" value="success">Success</option>
+        <option id="failure" value="failure">Failure</option>
+      </select>
+
+      <div>
+        <input id="searchBox" placeholder="Search mission">
+        <button id="searchBtn">Search</button>
+      </div>
+
+    </div>
+
+
+    <table>
+      <thead>
+        <tr>
+          <th>Mission</th>
+          <th>Date</th>
+          <th>Rocket</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody class="timeline"></tbody>
+    </table>
+
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>

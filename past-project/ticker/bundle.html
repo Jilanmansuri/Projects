@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bundel.html</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Hind', sans-serif;
+        }
+
+        
+        .top {
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 20px;
+            position: fixed;
+            gap: 210px;
+            z-index: 100;
+            background-color: white;
+        }
+
+        .navbar {
+            word-spacing: 25px;
+
+        }
+
+        .trading {
+            word-spacing: 25px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #account {
+            background-color: #e1efff;
+            padding: 6px;
+            border-radius: 10px;
+            color: #0078ff;
+        }
+
+        .bun {
+            padding-top: 100px;
+            padding-left: 20px;
+        }
+
+        #p1 {
+
+            font-size: 16px;
+            font-weight: bolder;
+        }
+
+        .box {
+            margin-top: 35px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            row-gap: 20px;
+        }
+
+        .box>div {
+            width: 350px;
+            height: 470px;
+            background-color: white;
+            text-align: center;
+            border-radius: 7px;
+            box-shadow: 0 5px 30px rgba(0, 120, 255, 0.2);
+        }
+
+        .box>div>img {
+            margin-top: 23px;
+        }
+
+        h4 {
+            margin-top: 50px;
+            font-size: 19px;
+        }
+
+        #p4 {
+            padding-top: 10px;
+            font-size: 18px;
+        }
+
+        button {
+            width: 200px;
+            height: 37px;
+            margin-top: 20px;
+            border-radius: 10px;
+            font-size: 17px;
+            background-color: #0078ff;
+            color: white;
+            font-weight: bolder;
+            outline: none;
+            border: none;
+
+        }
+
+        .footer{
+            padding: 40px;
+        }
+
+        ol{
+            margin-top: 10px;
+        }
+        li{
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        h3{ 
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="logo">
+            <img src="https://assets.finology.in/ticker/images/tickerlogo.svg" alt="" width="140px">
+        </div>
+        <div class="navbar">
+            <nav>
+                <a href="https://ticker.finology.in/">Home</a>
+                <a href="https://ticker.finology.in/market">Market</a>
+                <a href="https://ticker.finology.in/ipo">IPO</a>
+                <a href="https://ticker.finology.in/screener">Scanner</a>
+                <a href="https://ticker.finology.in/bundles">Bundles</a>
+                <a href="https://ticker.finology.in/investor">Super Investors</a>
+                <a href="https://ticker.finology.in/sector">Sector</a>
+                <a href="https://ticker.finology.in/discover">Discover</a>
+                <a href="https://ticker.finology.in/tickerplus"><img
+                        src="https://img.icons8.com/?size=64&id=22869&format=png&color=FAB005" alt="" width="27px"
+                        style="position: relative; top: 6px;">Trackerplus</a>
+                <a href="https://ticker.finology.in/login.aspx" id="account"><img
+                        src="https://img.icons8.com/?size=100&id=0R7F3PxtxHVm&format=png&color=228BE6" alt=""
+                        width="27px" style="position: relative; top: 6px;">Account</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="bun">
+        <p id="p1"><span style="color: #0078ff;">Ticker </span>&gt; Bundles</p>
+
+        <h1>Ticker Bundles</h1>
+        <p id="p2" style="padding-top: 8px;">Look into our professionally crafted bundles to get started with investment
+            Strategies.</p>
+
+    </div>
+
+    <div class="box">
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/3a7b1e7aa6c845a6a209a0f1ed29f3de.jpg" alt=""
+                width="320px">
+            <h4>Canslim Basket</h4>
+            <p id="p4">companies that grow their</p>
+            <p id="p4">earnings regularly</p>
+            <button>Access</button>
+        </div>
+
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/324d18008b9240338acc896571891c26.jpg" alt=""
+                width="320px">
+            <h4>Efficient Banks</h4>
+            <p id="p4">Banks that are efficient in their</p>
+            <p id="p4">operation</p>
+            <button>Access</button>
+        </div>
+
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/19556c0776e84fdb878cd54d266fc1a8.jpg" alt=""
+                width="320px">
+            <h4>Rising star</h4>
+            <p id="p4">Microcap companies aiming to</p>
+            <p id="p4">reach the stars</p>
+            <button>Access</button>
+        </div>
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/6f0c2e10a9d74c6184d99888959560fe.jpg" alt=""
+                width="320px">
+            <h4>Debt Independent</h4>
+            <p id="p4">companies that are Virtyally</p>
+            <p id="p4">debt-free</p>
+            <button>Access</button>
+        </div>
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/77099e0adbb34fb8bcbd476ed2e39768.jpg" alt=""
+                width="320px">
+            <h4>institution fav</h4>
+            <p id="p4">companies Backed by increasing</p>
+            <p id="p4">institutional holdings</p>
+            <button>Access</button>
+        </div>
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/12c50bcc4d804304b510d648859e4a66.jpg" alt=""
+                width="320px">
+            <h4>Divided stars</h4>
+            <p id="p4">Top Divided paying companies</p>
+            <p id="p4">with decent fundamentals</p>
+            <button>Access</button>
+        </div>
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/5f3668b3e03440bf86367d2baeee0d25.jpg" alt=""
+                width="320px">
+            <h4>Rigid Risers</h4>
+            <p id="p4">companies growing without</p>
+            <p id="p4">issuing any new capital</p>
+            <button>Access</button>
+        </div>
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/65dfa882d3c544fba40f9138f176bfe0.jpg" alt=""
+                width="320px">
+            <h4>Turnaround Champs</h4>
+            <p id="p4">Companies that took a solid uturn</p>
+            <p id="p4">after a weak phase of business</p>
+            <button>Access</button>
+        </div>
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/acc26b8347874231bc1ba3125a698261.jpg" alt=""
+                width="320px">
+            <h4>CapExander</h4>
+            <p id="p4"> Companies planning to expand </p>
+            <p id="p4">their business.</p>
+            <button>Access</button>
+        </div>
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/bc6cdceee92340699d7b26dd71eaeb75.jpg" alt=""
+                width="320px">
+            <h4>CoffeeCan Basket</h4>
+            <p id="p4">The buy and Forget approch of</p>
+            <p id="p4">investing</p>
+            <button>Access</button>
+        </div>
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/67ea784c8a274176a61bd46e8f00aafc.jpg" alt=""
+                width="320px">
+            <h4>Emerging Bluechip</h4>
+            <p id="p4">Quailty mid-cap stocks that</p>
+            <p id="p4">exhibit higher growth potential</p>
+            <button>Access</button>
+        </div>
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/f9241468ca8b4a0db9daaf88a810ac50.jpg" alt=""
+                width="320px">
+            <h4>peter Lynch's FAV</h4>
+            <p id="p4">Stocks of companies with lower</p>
+            <p id="p4">debt and steady growth rate</p>
+            <button>Access</button>
+        </div>
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/3ad7ef22181e4003952c1f9e6835ac2b.jpg" alt=""
+                width="320px">
+            <h4>Value Trap</h4>
+            <p id="p4">Beware of these sub-standard</p>
+            <p id="p4">under-valued stocks</p>
+            <button>Access</button>
+        </div>
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/3fd9b8421cc24675aac507007206d17b.jpg" alt=""
+                width="320px">
+            <h4>Profit Spinners</h4>
+            <p id="p4">companies that disprortionatetly generate profit</p>
+            <p id="p4">With rise in sales</p>
+            <button>Access</button>
+        </div>
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/c3fdd980c47e427091a1e5fe45665760.jpg" alt=""
+                width="320px">
+            <h4>Effcient Operators</h4>
+            <p id="p4">companies that can generate</p>
+            <p id="p4">high revenues through assets</p>
+            <button>Access</button>
+        </div>
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/c51d6bcabde846049b052e2d5d7d594f.jpg" alt=""
+                width="320px">
+            <h4>value Bargain</h4>
+            <p id="p4">companies Whose stocks are</p>
+            <p id="p4">available at throwaway prices</p>
+            <button>Access</button>
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="footer">
+        <p> </p>
+        <h2>Ticker Bundles: Readymade Stock Screener</h2>
+
+        <p>Investing in the stock market offers the potential for significant financial growth, but navigating this
+            dynamic landscape can be both exciting and daunting. Ticker Bundles are here to help. These readymade
+            collections of stocks, curated by experts, provide a comprehensive list of stocks based on various
+            strategies and themes derived from a <strong><a
+                    href="https://ticker.finology.in/screener?utm_campaign=education&amp;utm_medium=blog&amp;utm_source=discover">stock
+                    screener</a></strong>.</p>
+
+        <h3 style="margin-top: 20px;">Exploring Different Investment Strategies with Ticker Bundles</h3>
+
+        <ol>
+            <li>
+                <p><strong>Building Wealth with Growth Stocks: </strong>These bundles feature companies with strong
+                    earnings growth, innovative products, and a track record of outperforming the market.</p>
+            </li>
+            <li>
+                <p><strong>Finding Value in Value Investing Stocks:</strong> These bundles include undervalued stocks
+                    with strong fundamentals and the potential for price appreciation.</p>
+            </li>
+            <li>
+                <p><strong>High Dividend Stocks:</strong> A Steady Income Stream: Invest in bundles focused on high
+                    dividend stocks, providing a reliable source of income.</p>
+            </li>
+            <li>
+                <p><strong>Discover Hidden Gems:</strong> Explore bundles that include lesser-known companies with
+                    promising prospects.</p>
+            </li>
+        </ol>
+
+        <h3  style="margin-top: 20px;">How to Get Started with Ticker Bundles</h3>
+
+        <ol>
+            <li>
+                <p><strong>Visit Any Bundle:</strong> Explore the available Ticker Bundles (10 free and 10 paid) and
+                    choose one that catches your interest.</p>
+            </li>
+            <li>
+                <p><strong>Browse the Listed Stocks:</strong> Take a look at the list of stocks included in the bundle.
+                    This will give you an initial idea of the companies that make up the bundle.</p>
+            </li>
+            <li>
+                <p><strong>Customize if Desired:</strong> If you wish, you can customize the bundle by copying the
+                    formula in the screener and adding your own filter of ratios to it.</p>
+            </li>
+            <li>
+                <p><strong>Research Thoroughly:</strong> Once you have selected or customized a bundle, it's important
+                    to conduct further research on the stocks included. Dive deeper into their financials, performance
+                    history, and any relevant news or industry trends.</p>
+            </li>
+        </ol>
+
+        <h3>Expert-Backed Investment Insights</h3>
+
+        <p>Ticker Bundles are crafted by financial experts and professionals with a deep understanding of the market.
+            These experts carefully analyze various investment strategies and themes to identify stocks that align with
+            proven approaches and have the potential for strong performance.</p>
+
+        <p>The experts consider factors such as earnings growth, financial fundamentals, innovation, <a
+                href="https://ticker.finology.in/market" target="_blank"
+                title="Indian Stock Market - Share Market Indices Today, Live BSE, NSE Updates"><strong>market
+                    trends</strong></a>, and industry dynamics when selecting stocks for the bundles. They leverage
+            their knowledge and experience to curate lists of stocks that reflect the identified investment strategies
+            and themes.</p>
+
+        <h3>Conclusion</h3>
+
+        <p>Ticker Bundles provide a convenient and expert-backed solution for investors looking to diversify their
+            portfolios and explore different investment strategies. With the ability to customize the list of stocks
+            based on your preferences, Ticker Bundles empower you to make informed investment decisions.&nbsp;</p>
+        <p></p>
+    </div>
+
+</body>
+
+</html>

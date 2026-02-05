@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+     font-family: 'Montserrat', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+     background: linear-gradient(135deg, #232526 0%, #414345 100%);
+     height: 100vh;
+     
+}
+
+.container{
+    width: 30vw;
+    gap: 1.1rem;
+    margin-top: 10vh;
+    margin-left:auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+header h1{
+    color: white;
+    font-size: 1.3rem;
+    text-transform:uppercase;
+    font-weight: 550;
+    letter-spacing: 0.7px;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    
+}
+
+.color-display{
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    
+}
+
+.message{
+    color: white;
+}
+
+.streak-section{
+    width:60% ;
+    
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.streak-box{
+    width: 48%;
+    height: 100px;
+    border: 1px solid white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+h3{
+    color: white;
+    font-size: 0.8rem;
+}
+
+.streak-number{
+    color: rgb(28, 170, 170) ;
+    font-size: 2.3rem;
+    font-weight: 550;
+}
+
+.control-btn{
+    color: white;
+    background-color: rgb(28, 170, 170);
+}
+
+#easyBtn{
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+}
+
+#hardBtn{
+    color: black;
+    background-color: white;
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    gap: 0.6em;
+}
+
+button{
+    border: none;
+    border-radius: 7px;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.color-box-container{
+    width: 100%;
+    height: 280px;
+    display: grid;
+    row-gap: 1em;
+    column-gap: 1em;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    
+}
+
+.color-box{
+    
+    border: 1px solid white;
+    border-radius: 10px;
+   
+
+}

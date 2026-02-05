@@ -1,0 +1,10 @@
+ {
+    "name":"First Extension",
+    "description":"experimental purpose extension creation to learn it from the scratch",
+    "version":"1.0.0",
+    "manifest_version":3,
+    "action": {
+      "default_icon":"image.png",
+      "default_popup":"index.html"
+    }
+ }

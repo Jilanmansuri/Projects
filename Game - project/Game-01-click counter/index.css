@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+
+body {
+    /* background: rgb(109, 49, 227); */
+    height: 100vh;
+    background: linear-gradient(115deg, #667eea, #764ba2);
+    width: 100vw;
+    z-index: -2;
+   
+    
+
+
+}
+
+@media(max-width:576px) {
+    .container {
+        width: 90vw;
+         height: 70vh;
+         top: 15vh;
+    }
+
+    .score-box{
+        width: 41.5%;
+        height: 90px;
+    }
+}
+
+@media(min-width:768px) {
+    .container {
+        width: 430px;
+         height: 80vh;
+         top: 10vh;
+    }
+     .score-box{
+        width: 180px;
+        height: 100px;
+        
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .container {
+        width: 430px;
+         height: 80vh;
+         top: 10vh;
+    }
+
+     .score-box{
+        width: 180px;
+        height: 100px;
+    }
+}
+
+
+video{
+    z-index: -1;
+    position: absolute;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.container {
+    /* width: 30vw; */
+    /* width: 430px; */
+    /* height: 614px; */
+   
+    background-color: white;
+    margin: auto;
+   position: relative;
+   
+   
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 15px;
+    /* box-shadow: 2px 2px 2px black; */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 2);
+
+}
+
+h1 {
+
+    /* background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    color: blueviolet;
+}
+
+.subtitle {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    opacity: 1;
+    font-weight: bolder;
+}
+
+.score-section {
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    gap: 1rem;
+
+}
+
+.score-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    
+    border-radius: 10px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+
+
+}
+
+.score-box h2 {
+    color: white;
+    font-size: 1rem;
+
+}
+
+.score {
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+
+
+.timer-section h2 {
+    font-size: 1em;
+
+}
+
+.timer {
+    color: blue;
+    font-size: 2.5em;
+    font-weight: bolder;
+}
+
+.button-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.click-btn {
+    height: 60px;
+    background-color: rgb(205, 202, 202);
+    font-size: 1.5em;
+    color: white;
+    font-weight: bold;
+    width: 87%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+
+}
+
+.click-btn:not(:disabled) {
+    background: linear-gradient(90deg, #667eea, red);
+    cursor: pointer;
+}
+
+.click-btn {
+    cursor: not-allowed;
+}
+
+.start-btn {
+    height: 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-size: 1.1em;
+    color: white;
+    font-weight: bold;
+    width: 87%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.reset-btn {
+    height: 35px;
+    /* background-color: orangered; */
+    background: linear-gradient(115deg, orangered, rgb(255, 115, 115));
+    font-size: 1em;
+    color: white;
+    font-weight: bolder;
+    width: 87%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.pause-btn {
+    height: 40px;
+    background: linear-gradient(100deg, rgb(7, 160, 7), #6290d9);
+    font-size: 1.1em;
+    color: white;
+    font-weight: bold;
+    width: 47%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.resume-btn {
+    height: 40px;
+    background: linear-gradient(135deg, rgb(204, 52, 77), #bd6b34);
+    font-size: 1.1em;
+    color: white;
+    font-weight: bold;
+    width: 47%;
+    display: none;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hello {
+    display: flex;
+    width: 90%;
+
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.status-message {
+    font-weight: bold;
+    font-size: 1em;
+}

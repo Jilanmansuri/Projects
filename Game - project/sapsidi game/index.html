@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapsidi - Snake and Ladders Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎲 Sapsidi Game 🎲</h1>
+            <p class="subtitle">Snake and Ladders - Professional Edition</p>
+        </div>
+
+        <div class="game-wrapper">
+            <!-- Game Board -->
+            <div class="board-section">
+                <div class="board" id="board"></div>
+            </div>
+
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="game-info">
+                    <div class="player-status">
+                        <h3>Players</h3>
+                        <div class="players-list" id="playersList"></div>
+                    </div>
+
+                    <div class="game-stats">
+                        <h3>Game Stats</h3>
+                        <p>Current Player: <span id="currentPlayer">Player 1</span></p>
+                        <p>Dice Roll: <span id="diceValue">-</span></p>
+                        <p>Total Moves: <span id="totalMoves">0</span></p>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="rollDiceBtn" class="btn btn-primary">🎲 Roll Dice</button>
+                    <button id="resetBtn" class="btn btn-secondary">🔄 Reset Game</button>
+                    <button id="startBtn" class="btn btn-success">▶ Start Game</button>
+                </div>
+
+                <div class="rules">
+                    <h3>How to Play</h3>
+                    <ul>
+                        <li>Roll the dice to move your token</li>
+                        <li>Climb ladders to move up faster</li>
+                        <li>Avoid snakes that take you down</li>
+                        <li>First player to reach 100 wins!</li>
+                        <li>Click "Roll Dice" on your turn</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Status Modal -->
+        <div id="statusModal" class="modal">
+            <div class="modal-content">
+                <h2 id="modalTitle">Game Started!</h2>
+                <p id="modalMessage"></p>
+                <button id="modalBtn" class="btn btn-primary">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

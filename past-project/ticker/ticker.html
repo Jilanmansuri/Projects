@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ticker.finology</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .top {
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 20px;
+            position: fixed;
+            gap: 210px;
+            z-index: 100;
+            background-color: white;
+        }
+
+
+
+
+        .navbar {
+            word-spacing: 25px;
+
+
+        }
+
+        .trading {
+            word-spacing: 25px;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #account {
+            background-color: #e1efff;
+            padding: 6px;
+            border-radius: 10px;
+            color: #0078ff;
+        }
+
+        #search {
+            height: 70px;
+            width: 850px;
+            border-radius: 50px;
+            background-color: white;
+            font-size: 19px;
+            font-weight: lighter;
+            padding: 20px;
+            padding-left: 80px;
+            box-shadow: 0 5px 30px rgba(0, 120, 255, 0.2);
+            border: none;
+            outline: none;
+
+        }
+
+        .rock {
+            display: flex;
+            position: relative;
+            right: 20px;
+
+        }
+
+        .invest {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 1500px;
+            height: 500px;
+
+            text-align: center;
+            gap: 35px;
+            position: relative;
+            top: 150px;
+
+
+
+
+        }
+
+        .p1 {
+            font-size: 45px;
+            font-weight: bolder;
+
+        }
+
+        .p2 {
+            font-size: 23px;
+            color: #0078ff;
+            font-weight: bold;
+
+        }
+
+        #trade {
+            background-color: #e1efff;
+            padding: 6px;
+            border-radius: 10px;
+            color: #0078ff;
+        }
+
+        .market {
+            margin-top: 200px;
+            padding-left: 40px;
+
+        }
+
+        .market>h1 {
+            opacity: .8;
+        }
+
+        #p3 {
+            font-size: 18px;
+            opacity: .7;
+        }
+
+        .halfs {
+            height: 640px;
+            width: 670px;
+            background-color: white;
+            border-radius: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            box-shadow: 0 5px 30px rgba(0, 120, 255, 0.2);
+
+        }
+
+        .left {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+
+        table {
+            width: 670px;
+
+            border-radius: 100px;
+            margin-top: 10px;
+            border-collapse: collapse;
+
+        }
+
+
+        th {
+
+            height: 50px;
+            color: #0078FF;
+            border-bottom: 1px solid rgb(191, 204, 209);
+            background-color: #c2d6ec;
+
+        }
+
+        td {
+            text-align: end;
+            height: 40px;
+            border-bottom: 1px solid rgb(191, 204, 209);
+            ;
+            padding-right: 20px;
+        }
+
+        th:first-child {
+            text-align: start;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+
+
+        }
+
+        th:nth-child(2) {
+            text-align: end;
+        }
+
+        th:nth-child(3) {
+            text-align: end;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+
+
+
+        td:first-child {
+            text-align: left;
+            padding-left: 10px;
+            color: #0078FF;
+        }
+
+        tr:hover {
+            background-color: #F6FAFF;
+        }
+
+        .all {
+            display: flex;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #0078FF;
+        }
+
+
+        .tablepart {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 50px;
+            background-color: white;
+        }
+
+        .bun {
+            padding-top: 100px;
+            padding-left: 20px;
+        }
+
+        #p1 {
+
+            font-size: 16px;
+            font-weight: bolder;
+        }
+
+        .box {
+            margin-top: 35px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            row-gap: 20px;
+        }
+
+        .box>div {
+            width: 350px;
+            height: 470px;
+            background-color: white;
+            text-align: center;
+            border-radius: 7px;
+            box-shadow: 0 5px 30px rgba(0, 120, 255, 0.1);
+        }
+
+        .box>div>img {
+            margin-top: 23px;
+        }
+
+        h4 {
+            margin-top: 50px;
+            font-size: 19px;
+        }
+
+        #p4 {
+            padding-top: 10px;
+            font-size: 18px;
+        }
+
+        button {
+            width: 200px;
+            height: 37px;
+            margin-top: 20px;
+            border-radius: 10px;
+            font-size: 17px;
+            background-color: #0078ff;
+            color: white;
+            font-weight: bolder;
+            outline: none;
+            border: none;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="logo">
+            <img src="https://assets.finology.in/ticker/images/tickerlogo.svg" alt="" width="140px">
+        </div>
+        <div class="navbar">
+            <nav>
+                <a href="https://ticker.finology.in/">Home</a>
+                <a href="https://ticker.finology.in/market">Market</a>
+                <a href="https://ticker.finology.in/ipo">IPO</a>
+                <a href="https://ticker.finology.in/screener">Scanner</a>
+                <a href="https://ticker.finology.in/bundles">Bundles</a>
+                <a href="https://ticker.finology.in/investor">Super Investors</a>
+                <a href="https://ticker.finology.in/sector">Sector</a>
+                <a href="https://ticker.finology.in/discover">Discover</a>
+                <a href="https://ticker.finology.in/tickerplus"><img
+                        src="https://img.icons8.com/?size=64&id=22869&format=png&color=FAB005" alt="" width="27px"
+                        style="position: relative; top: 6px;">Trackerplus</a>
+                <a href="https://ticker.finology.in/login.aspx" id="account"><img
+                        src="https://img.icons8.com/?size=100&id=0R7F3PxtxHVm&format=png&color=228BE6" alt=""
+                        width="27px" style="position: relative; top: 6px;">Account</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="invest">
+        <p class="p1">Investing Ka Search Engine</p>
+        <p class="p2">The Morden Stock Screener that helps you pick better stocks</p>
+        <div class="rock">
+            <div> <img
+                    src="https://tse2.mm.bing.net/th/id/OIP.1oPbR7JXERcMsF6vC7OAwQHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="" width="30px" style="position: relative; left: 60px; top: 20px;"></div>
+            <div><input type="search" name="" id="search" placeholder="Type a company Name Or Brand to search"></div>
+        </div>
+
+        <div>
+
+            <nav class="trading">
+                <a style="font-weight: bold; font-size: 19px;">What'sTrading: </a>
+                <a href="https://ticker.finology.in/company/ITC" id="trade">ITC</a>
+                <a href="https://ticker.finology.in/company/RELIANCE" id="trade">RELIANCE</a>
+                <a href="https://ticker.finology.in/company/HDFCBANK" id="trade">HDFCBANK</a>
+                <a href="https://ticker.finology.in/company/YESBANK" id="trade">YESBANK</a>
+                <a href="https://ticker.finology.in/company/TATAMOTORS" id="trade">TATAMOTORS</a>
+            </nav>
+        </div>
+        <div><img src="https://assets.finology.in/ticker/images/mstock-home-desktop.jpg?v=1" alt="" width="850px"></div>
+    </div>
+
+    <div class="market">
+        <h1>Market Movers</h1>
+        <p id="p3">Learn about Stock market updates today - Peek into Gainers, Losers, 52 Week Highs, 52 week Lows and
+            more. </p>
+    </div>
+
+    <div class="tablepart">
+        <div class="halfs one">
+
+            <div class="left">
+                <p style="font-size: 20px;">52 Week High/Low</p>
+                <p style="font-size: 17px;">High/Low</p>
+
+            </div>
+
+            <div>
+                <table>
+                    <tr>
+                        <th>COMPANY</th>
+                        <th>PRICE <span style="color: grey; opacity: 0.6;font-size: small;">Rs.</span></th>
+                        <th>DAY HIGH <span style="color: grey; opacity: 0.6;font-size: small;">Rs.</span></th>
+                    </tr>
+
+                    <tr>
+                        <td>Netweb Technologies</td>
+                        <td>4,311.90</td>
+                        <td>4,378.20</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tata Steel</td>
+                        <td>173.21</td>
+                        <td>174.74</td>
+                    </tr>
+
+                    <tr>
+                        <td>TruAlt Bio</td>
+                        <td>530.95</td>
+                        <td>549.00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tata Corp</td>
+                        <td>10,014.75</td>
+                        <td>11,840.00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Jain Recycl</td>
+                        <td>304.58</td>
+                        <td>346.70</td>
+                    </tr>
+
+                    <tr>
+                        <td>Canara Bank</td>
+                        <td>John Cockerill</td>
+                        <td>Avantel</td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Prozone Reality</td>
+                        <td>66.08</td>
+                        <td>68.03</td>
+                    </tr>
+
+                    <tr>
+                        <td>TVS Electronic</td>
+                        <td>639.35</td>
+                        <td>680.00</td>
+                    </tr>
+
+                    <tr>
+                        <td>KIOCL</td>
+                        <td>528.65</td>
+                        <td>528.65</td>
+                    </tr>
+
+                    <tr>
+                        <td>Earkaart</td>
+                        <td>142.25</td>
+                        <td>142.24</td>
+                    </tr>
+
+                    <tr>
+                        <td>Hindustan Copper</td>
+                        <td>338.10</td>
+                        <td>927.40</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="all">
+                <p>View ALL 52 Week High</p>
+            </div>
+
+        </div>
+
+
+        <div class="halfs one">
+
+            <div class="left">
+                <p style="font-size: 20px;">52 Week High/Low</p>
+                <p style="font-size: 17px;">High/Low</p>
+
+            </div>
+
+            <div>
+                <table>
+                    <tr>
+                        <th>COMPANY</th>
+                        <th>PRICE <span style="color: grey; opacity: 0.6;font-size: small;">Rs.</span></th>
+                        <th>DAY HIGH <span style="color: grey; opacity: 0.6;font-size: small;">Rs.</span></th>
+                    </tr>
+
+                    <tr>
+                        <td>Netweb Technologies</td>
+                        <td>4,311.90</td>
+                        <td>4,378.20</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tata Steel</td>
+                        <td>173.21</td>
+                        <td>174.74</td>
+                    </tr>
+
+                    <tr>
+                        <td>TruAlt Bio</td>
+                        <td>530.95</td>
+                        <td>549.00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tata Corp</td>
+                        <td>10,014.75</td>
+                        <td>11,840.00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Jain Recycl</td>
+                        <td>304.58</td>
+                        <td>346.70</td>
+                    </tr>
+
+                    <tr>
+                        <td>Canara Bank</td>
+                        <td>John Cockerill</td>
+                        <td>Avantel</td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Prozone Reality</td>
+                        <td>66.08</td>
+                        <td>68.03</td>
+                    </tr>
+
+                    <tr>
+                        <td>TVS Electronic</td>
+                        <td>639.35</td>
+                        <td>680.00</td>
+                    </tr>
+
+                    <tr>
+                        <td>KIOCL</td>
+                        <td>528.65</td>
+                        <td>528.65</td>
+                    </tr>
+
+                    <tr>
+                        <td>Earkaart</td>
+                        <td>142.25</td>
+                        <td>142.24</td>
+                    </tr>
+
+                    <tr>
+                        <td>Hindustan Copper</td>
+                        <td>338.10</td>
+                        <td>927.40</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="all">
+                <p>View ALL 52 Week High</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bun">
+
+
+        <h1>Featured Bundles</h1>
+        <p id="p2" style="padding-top: 8px;">Look into our professionally crafted bundles to get started with investment
+            Strategies.</p>
+
+    </div>
+
+    <div class="box">
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/3a7b1e7aa6c845a6a209a0f1ed29f3de.jpg" alt=""
+                width="320px">
+            <h4>Canslim Basket</h4>
+            <p id="p4">companies that grow their</p>
+            <p id="p4">earnings regularly</p>
+            <button>Access</button>
+        </div>
+
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/324d18008b9240338acc896571891c26.jpg" alt=""
+                width="320px">
+            <h4>Efficient Banks</h4>
+            <p id="p4">Banks that are efficient in their</p>
+            <p id="p4">operation</p>
+            <button>Access</button>
+        </div>
+
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/19556c0776e84fdb878cd54d266fc1a8.jpg" alt=""
+                width="320px">
+            <h4>Rising star</h4>
+            <p id="p4">Microcap companies aiming to</p>
+            <p id="p4">reach the stars</p>
+            <button>Access</button>
+        </div>
+        <div>
+            <img src="https://d3po6s2ufk88fh.cloudfront.net/450x300/Ticker/6f0c2e10a9d74c6184d99888959560fe.jpg" alt=""
+                width="320px">
+            <h4>Debt Independent</h4>
+            <p id="p4">companies that are Virtyally</p>
+            <p id="p4">debt-free</p>
+            <button>Access</button>
+        </div>
+    </div>
+
+    <div class="viewmore" style="color: #0078FF; text-align: center; margin-top: 50px;">View All Bundles</div>
+
+
+
+
+
+
+
+</body>
+
+</html>

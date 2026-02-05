@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  background: #f1f5f9;
+  padding: 30px;
+}
+
+ h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #0f172a;
+}
+
+.studentlist {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.box {
+  background: #ffffff;
+  border: 1px solid #cbd5f5;
+  border-radius: 10px;
+  padding: 16px;
+  transition: all 0.3s ease;
+  height: 200px;
+  
+  
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.box h3 {
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.box p {
+  color: #475569;
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+

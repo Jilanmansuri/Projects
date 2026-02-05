@@ -1,0 +1,4 @@
+manifest_vrsion crome ke liye hota he hamre liye nahi   
+
+extation maximum size 800x600
+default_icon: asset/image.png  size 16x16 32x32 128x128
