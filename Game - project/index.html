@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Projects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        th {
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1em;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tbody tr:hover {
+            background-color: #f5f5f5;
+            transition: all 0.3s ease;
+        }
+        
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+        a:hover {
+            background-color: #667eea;
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .sno {
+            color: #764ba2;
+            font-weight: 700;
+            width: 50px;
+            text-align: center;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 12px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Game Projects</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Game Name</th>
+                    <th>Path</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="sno">1</td>
+                    <td>Click Counter</td>
+                    <td>./Game-01-click counter/</td>
+                    <td><a href="./Game-01-click counter/index.html">Play Game</a></td>
+                </tr>
+                <tr>
+                    <td class="sno">2</td>
+                    <td>Color Guessing Game</td>
+                    <td>./Game-02-colorGuesinggame/</td>
+                    <td><a href="./Game-02-colorGuesinggame/index.html">Play Game</a></td>
+                </tr>
+                <tr>
+                    <td class="sno">3</td>
+                    <td>Whack a Mole</td>
+                    <td>./Game-03-wack a mole/</td>
+                    <td><a href="./Game-03-wack a mole/index.html">Play Game</a></td>
+                </tr>
+                <tr>
+                    <td class="sno">4</td>
+                    <td>Typing Speed Test</td>
+                    <td>./Game-04-Typing Speed Test/</td>
+                    <td><a href="./Game-04-Typing Speed Test/index.html">Play Game</a></td>
+                </tr>
+                <tr>
+                    <td class="sno">5</td>
+                    <td>Memory Flip Card</td>
+                    <td>./Game-05-Memory Flip card/</td>
+                    <td><a href="./Game-05-Memory Flip card/index.html">Play Game</a></td>
+                </tr>
+                <tr>
+                    <td class="sno">6</td>
+                    <td>To-Do Game</td>
+                    <td>./Game-06-To-Do Game/</td>
+                    <td><a href="./Game-06-To-Do Game/index.html">Play Game</a></td>
+                </tr>
+                <tr>
+                    <td class="sno">7</td>
+                    <td>Sapsidi Game</td>
+                    <td>./sapsidi game/</td>
+                    <td><a href="./sapsidi game/index.html">Play Game</a></td>
+                </tr>
+                <tr>
+                    <td class="sno">8</td>
+                    <td>Tic Tac Toe 3x3</td>
+                    <td>./tic toc toe 3x3/</td>
+                    <td><a href="./tic toc toe 3x3/index.html">Play Game</a></td>
+                </tr>
+                <tr>
+                    <td class="sno">9</td>
+                    <td>Tic Tac Toe 6x6</td>
+                    <td>./tic toc toe 6x6/</td>
+                    <td><a href="./tic toc toe 6x6/index.html">Play Game</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
