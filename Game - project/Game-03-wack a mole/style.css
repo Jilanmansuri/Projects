@@ -175,3 +175,18 @@ h1 {
         height: 120px;
     }
 }
+
+/* Additional responsive tweaks */
+@media (max-width: 900px) {
+    .container{padding:20px}
+    h1{font-size:1.6rem}
+    .hole{height:140px}
+    .mole::before{font-size:2.5em}
+}
+
+@media (max-width: 480px) {
+    .game-board{grid-template-columns:repeat(2,1fr)}
+    .hole{height:110px}
+    .mole::before{font-size:2em}
+    .start-btn,.btnx{font-size:0.95em;padding:10px 14px}
+}

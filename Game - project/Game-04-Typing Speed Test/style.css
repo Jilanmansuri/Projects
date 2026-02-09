@@ -185,3 +185,12 @@ h1 {
         font-size: 1em;
     }
 }
+
+@media (max-width: 480px) {
+  .container{padding:20px}
+  .text-display{min-height:120px;font-size:1rem}
+  #typingArea{min-height:120px;padding:12px;font-size:1rem}
+  .btn-3{width:32%;height:50px;font-size:1.1em}
+  .start-btn,.reset-btn{width:100%;padding:12px;margin-right:0}
+  .controls{flex-direction:column;gap:10px}
+}

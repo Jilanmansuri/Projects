@@ -15,7 +15,7 @@
 
 body{
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -281,5 +281,19 @@ dropdown*/
         max-width: 96%;
         min-width: 96%;
     }
+}
+
+/* Additional responsive rules for To-Do Game */
+@media (max-width: 1000px) {
+    .container{margin:0 40px;min-width:unset;max-width:94%}
+}
+
+@media (max-width: 720px) {
+    body{padding:20px}
+    .container{margin:0 20px;min-width:unset;max-width:96%}
+    header .input-section{flex-direction:column;gap:10px}
+    .input-section input{width:100%;margin-right:0}
+    .todos-filter, .filters{flex-direction:column;gap:8px}
+    .todos-list{max-height:50vh}
 }
 /* onx-qzxa-sao */
