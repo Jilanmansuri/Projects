@@ -65,3 +65,18 @@ body{
     .game{height:70vmin;width:70vmin}
     .btn{width:12vmin;height:12vmin;font-size:38px}
 }
+
+/* Header + scoreboard styles */
+.ttt-header{display:flex;justify-content:space-between;align-items:center;padding:14px;gap:12px}
+.scoreboard{display:flex;gap:12px;align-items:center}
+.scoreboard .player{background:#111;color:#fff;padding:8px 12px;border-radius:8px;font-weight:700}
+.controls button{margin-left:8px;padding:8px 10px;border-radius:8px;border:none;cursor:pointer}
+.status{font-weight:600}
+
+/* cell states */
+.btn.disabled{opacity:0.6;cursor:not-allowed}
+.btn.win{background:linear-gradient(90deg,#ffd166,#f15bb5);color:#111}
+
+@media (max-width:420px){
+  .btn{font-size:28px}
+}

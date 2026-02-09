@@ -9,8 +9,22 @@
 </head>
 
 <body>
-    <h1>Tic-Tac-Toe</h1>
-    <div class="container">
+    <div class="ttt-app">
+        <header class="ttt-header">
+            <div class="scoreboard">
+                <div class="player" id="playerX">X: <span id="scoreX">0</span></div>
+                <div class="status" id="status">Turn: <span id="turn">X</span></div>
+                <div class="player" id="playerO">O: <span id="scoreO">0</span></div>
+            </div>
+            <div class="controls">
+                <button id="modeBtn">Mode: PvP</button>
+                <button id="newBtn">New Round</button>
+                <button id="resetBtn">Reset Scores</button>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="game" id="board">
         <div class="game">
             <button class="btn">1</button>
             <button class="btn">2</button>
@@ -57,7 +71,7 @@
         <button class="btnnew">newgame</button> -->
 
     </div>
-    <script src="index.js"></script>
+    <script src="tic-tac.js"></script>
 </body>
 
 </html>

@@ -7,23 +7,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>tic-tac-toe</p>
-    <div class="container">
-        <div class="game">
-            <button class="btn">1</button>
-            <button class="btn">2</button>
-            <button class="btn">3</button>
-            <button class="btn">4</button>
-            <button class="btn">5</button>
-            <button class="btn">6</button>
-            <button class="btn">7</button>
-            <button class="btn">8</button>
-            <button class="btn">9</button>
-        </div>
-        <!-- <button class="btnr">reset</button>
-        <button class="btnnew">newgame</button> -->
+    <div class="ttt-app">
+        <header class="ttt-header">
+            <div class="scoreboard">
+                <div class="player" id="playerX">X: <span id="scoreX">0</span></div>
+                <div class="status" id="status">Turn: <span id="turn">X</span></div>
+                <div class="player" id="playerO">O: <span id="scoreO">0</span></div>
+            </div>
+            <div class="controls">
+                <button id="modeBtn">Mode: PvP</button>
+                <button id="newBtn">New Round</button>
+                <button id="resetBtn">Reset Scores</button>
+            </div>
+        </header>
 
+        <main class="container">
+            <div class="game" id="board">
+                <button class="btn" data-index="0"></button>
+                <button class="btn" data-index="1"></button>
+                <button class="btn" data-index="2"></button>
+                <button class="btn" data-index="3"></button>
+                <button class="btn" data-index="4"></button>
+                <button class="btn" data-index="5"></button>
+                <button class="btn" data-index="6"></button>
+                <button class="btn" data-index="7"></button>
+                <button class="btn" data-index="8"></button>
+            </div>
+        </main>
     </div>
-    <script src="index.js"></script>
+
+    <script src="tic-tac.js"></script>
 </body>
 </html>
