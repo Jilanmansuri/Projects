@@ -28,7 +28,7 @@ function webload() {
 function onLoad() {
     var temp = localStorage.getItem('highScoreMole');
     if (temp != null) {
-        bestScore = temp;
+        bestScore = parseInt(temp);
     }
     else {
         bestScore = 0;
@@ -62,7 +62,7 @@ function endGame() {
 }
 
 function randomTime(min, max) {
-    return Math.floor(Math.random() * (max - min) + max);
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
 function randomHole() {

@@ -6,6 +6,7 @@ const bestStreakDisplay = document.querySelector('#bestStreak');
 const colorBoxes = document.querySelectorAll('.color-box');
 console.log(colorBoxes);
 const newRoundBtn = document.querySelector('#newRoundBtn');
+const video = document.querySelector('#video');
 
 const easyBtn = document.querySelector('#easyBtn');
 const hardBtn = document.querySelector('#hardBtn');
@@ -29,8 +30,8 @@ function webLoad() {
 }
 
 function displayMessage() {
-    currentStreakDisplay.textContent = current;
-    bestStreakDisplay.textContent = high;
+    currentStreakDisplay.textContent = currentStreak;
+    bestStreakDisplay.textContent = bestStreak;
 
 };
 
@@ -66,7 +67,7 @@ function resetGame() {
     setGame();
     displayContent();
     messageDisplay.textContent = "Your Game is Reset🔃";
-    video.style.display = 'none';
+    if (video) video.style.display = 'none';
 
     btnTrack.style.pointerEvents = "auto";
     messageDisplay.style.color = "#6F42C1";
@@ -78,8 +79,8 @@ function newround() {
     messageDisplay.textContent = "New Round Is Start! Pick a color!";
     setGame();
     displayContent();
-    video.style.display = 'none';
-    element.style.border = 'none';
+    if (video) video.style.display = 'none';
+    if (element) element.style.border = 'none';
     btnTrack.style.pointerEvents = "auto";
     messageDisplay.style.color = "#007BFF";
 
@@ -158,7 +159,9 @@ webLoad();
 
 // parent container ko track karne se uske sabhi children ko track kar payege
 function trackBtn(event) {        //event ki vajah se is element pe click kiya use ko track kar sakte he
-     element = event.target;
+    element = event.target;
+    // ignore clicks that are not on a color box
+    if (!element || !element.classList || !element.classList.contains('color-box')) return;
     console.log(element);
     var rgb = element.style.backgroundColor;
     console.log(rgb);
@@ -191,7 +194,7 @@ function trackBtn(event) {        //event ki vajah se is element pe click kiya u
         }
 
 
-        video.style.display = 'block';
+        if (video) video.style.display = 'block';
 
 
         if (currentStreak > bestStreak) {

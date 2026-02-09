@@ -37,11 +37,10 @@ function webLoad() {
 
 function onLoad() {
     var temp = sessionStorage.getItem('previousWpm')
-    if (temp != null) {
-        bestWPM = parseInt(temp);
-    }
-
-    else {
+    // compute final stats before showing message
+    updateStatus();
+    displayContent();
+    message.textContent = `Your Curent Typing Speed is : ${wpm}`;
         bestWPM = 0;
     }
 }
@@ -212,7 +211,7 @@ function Highlights() {
         }
 
         else {
-            highlightText += [currentText[i]];
+            highlightText += currentText[i];
         }
     }
     textDisplay.innerHTML = highlightText;

@@ -68,10 +68,9 @@ function addTask() {
         complete: false
     });
 
-    todoList.forEach((data) => {
-        console.log(data);
-        appendTask(todoList);
-    });
+    // add once and render list
+    console.log(todoList[todoList.length-1]);
+    appendTask(todoList);
 
     todoInput.value = "";
 
@@ -118,7 +117,7 @@ function complete(event) {
             else {
                 if (data.complete == true) {
                     data.complete = false;
-                    event.target.parentElement.parentElement.querySelector('#task').classList.add('line');
+                    event.target.parentElement.parentElement.querySelector('#task').classList.remove('line');
                 }
             }
         }

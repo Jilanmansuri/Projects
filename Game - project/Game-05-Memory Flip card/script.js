@@ -148,16 +148,37 @@ createBoxGame();
 
 function startGame() {
     startBtn.disabled = true;
+    // reset game state
     busy = true;
-    timeleft = 60;
+    timeleft = initialTime;
+    moves = 0;
+    matchedPairs = 0;
+    firstCard = null;
+    secondCard = null;
+    // rebuild board
+    createBoxGame();
+    movesEl.textContent = moves;
+    pairsEl.textContent = matchedPairs;
     timerId = setInterval(function () {
         timeleft--;
 
         if (timeleft <= 0) {
-            endgame();
+            endGame();
         }
         displayContent();
     }, 1000)
 }
 startBtn.addEventListener('click', startGame);
+
+function endGame() {
+    clearInterval(timerId);
+    busy = false;
+    startBtn.disabled = false;
+    // update best score
+    if (matchedPairs > bestScore) {
+        bestScore = matchedPairs;
+        localStorage.setItem('bestPair', bestScore);
+    }
+    displayContent();
+}
 
