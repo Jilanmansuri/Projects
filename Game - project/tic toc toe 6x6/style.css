@@ -55,3 +55,14 @@ body{
     width: 18vmin ;
     height: 18vmin;
 } */
+
+/* Responsive helpers */
+@media (max-width:900px){
+    .container{padding:12px;height:auto}
+    .game{height:50vmin;width:50vmin}
+    .btn{width:7vmin;height:7vmin;font-size:5vmin}
+}
+@media (max-width:600px){
+    .game{height:80vmin;width:80vmin}
+    .btn{width:6.5vmin;height:6.5vmin;font-size:4.5vmin}
+}
