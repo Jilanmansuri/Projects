@@ -1,2 +1,2 @@
 # Projects
-This projects repo contains a all assignments and project 
+This projects reposetry contains a all assignments and project 
