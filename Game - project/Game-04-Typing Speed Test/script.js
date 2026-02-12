@@ -43,7 +43,7 @@ function onLoad() {
     message.textContent = `Your Curent Typing Speed is : ${wpm}`;
         bestWPM = 0;
     }
-}
+
 
 function displayContent() {
     timerDisplay.textContent = timeLeft;
