@@ -35,6 +35,7 @@ function webLoad() {
     displayContent();
 }
 
+
 function onLoad() {
     var temp = sessionStorage.getItem('previousWpm')
     // compute final stats before showing message
