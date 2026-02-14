@@ -155,11 +155,12 @@ function resetGame() {
     timeLeft = 60;
     displayContent();
 
-    
+
     // 5️⃣ Start time reset karo
     startTime = null;
 
 
+    
     // 6️⃣ Start button enable karo
     startBtn.disabled = false;
 
