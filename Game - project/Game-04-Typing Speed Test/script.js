@@ -82,7 +82,6 @@ function fifteen() {
     sixtybtn.style.backgroundColor = 'rgb(48, 184, 184)';
     message.textContent = "15-second test selected";
     message.style.color='green';
-
     displayContent();
 };
 
