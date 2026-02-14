@@ -120,7 +120,6 @@ function startGame() {
     currentText = testTexts[Math.floor(Math.random() * testTexts.length)];
     console.log(currentText);
     textDisplay.textContent = currentText;
-
     typingArea.disabled = false;
     typingArea.value = "";
     typingArea.focus();
