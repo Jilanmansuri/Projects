@@ -1,6 +1,8 @@
 # Barista Coffee Website Clone
 
-A premium, responsive multi-page website clone of **Barista Coffee**, one of India's pioneer coffee chains. This project replicates the warm and inviting aesthetic of the original site, focusing on clean layouts and coffee-themed visual elements.
+🔗 **Live Demo**: [https://barista-web-clone-108623.netlify.app/](https://barista-web-clone-108623.netlify.app/)
+
+This project is a meticulously designed clone of the Barista Coffee website, aimed at capturing the essence of India's iconic coffee culture. It features a full multi-page architecture that allows users to explore the brand's history, store locations, and merchandise just like the original site. The design focuses on warm, coffee-inspired color palettes and high-quality imagery to create an inviting digital experience. Beyond the visuals, the project demonstrates proficiency in building complex, interconnected HTML structures and maintaining consistent styling across multiple pages.
 
 ## 🚀 Features
 

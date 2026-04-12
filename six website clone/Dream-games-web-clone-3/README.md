@@ -1,6 +1,8 @@
 # Dream Games Website Clone
 
-A high-quality, vibrant website clone of **Dream Games**, the leading mobile gaming company known for hits like "Royal Match". This project captures the fun and playful gaming aesthetic with cartoon characters and clean, professional modern design.
+🔗 **Live Demo**: [https://dreamgames-web3-clone.netlify.app/](https://dreamgames-web3-clone.netlify.app/)
+
+This project is a high-impact clone of the Dream Games corporate website, specifically designed to reflect the innovative and playful spirit of a top-tier mobile gaming company. It successfully captures the vibrant, cartoon-inspired aesthetic while maintaining the professional polish required for a global business presence. The site includes a full suite of pages, including dedicated areas for company culture and mobile games, all cohesive in their design and execution. By leveraging multi-page CSS organization, this clone demonstrates how to manage complex branding assets effectively in a modern web environment.
 
 ## 🎮 Features
 

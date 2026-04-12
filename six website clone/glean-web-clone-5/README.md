@@ -1,6 +1,8 @@
 # Glean AI Website Clone
 
-A sophisticated, modern website clone of **Glean**, the enterprise AI search engine. This project replicates the high-end software-as-a-service (SaaS) aesthetic, featuring complex mega-menus, interactive statistics sections, and detailed testimonial layouts.
+🔗 **Live Demo**: [https://glean-clone-web5-108623.netlify.app/](https://glean-clone-web5-108623.netlify.app/)
+
+This project is a high-fidelity reconstruction of the Glean enterprise AI search platform's landing page, designed to showcase the power and efficiency of modern SaaS branding. It includes highly complex UI components such as intricate mega-menus, an animated "logo wall" of major partners, and a comprehensive information architecture that mimics a production-ready software site. The design successfully captures the aesthetic of cutting-edge AI technology, utilizing professional layouts, high-contrast storytelling, and data-driven dashboards to engage the user. By implementing a multi-page structure with consistent, enterprise-grade styling, this clone demonstrates proficiency in managing dense content within a professional digital environment.
 
 ## 🤖 Features
 

@@ -1,6 +1,8 @@
 # Cronos Website Clone
 
-A high-impact, dark-themed website clone of **Cronos**, the leading crypto blockchain ecosystem. This project focuses on high-performance aesthetics, real-time-styled statistics, and an AI-forward branding look.
+🔗 **Live Demo**: [https://cronos-web6-clone-108623.netlify.app/](https://cronos-web6-clone-108623.netlify.app/)
+
+This project is a high-performance reconstruction of the Cronos blockchain ecosystem website, designed to replicate the sleek and aggressive dark-mode aesthetic favored by modern crypto platforms. It incorporates high-impact visual elements like video backgrounds, animated stats marquees, and a structured display of the sprawling Cronos dApp ecosystem. The site is engineered to communicate technical complexity while maintaining a clean and intuitive user journey, using persistent navigation and high-contrast branding to guide the viewer. By focusing on pixel-perfect alignment and professional typography, this clone demonstrates how to create a credible and engaging digital presence for high-tech financial ecosystems.
 
 ## ⚡ Features
 

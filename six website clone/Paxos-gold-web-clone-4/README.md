@@ -1,6 +1,8 @@
 # Paxos Gold Website Clone
 
-A professional, fintech-styled website clone of **Paxos Gold (PAXG)**. This project replicates the sophisticated crypto-asset platform interface, focusing on detailed financial information layout, crypto asset management aesthetics, and comprehensive documentation sections.
+🔗 **Live Demo**: [https://paxos-clone-web4.netlify.app/](https://paxos-clone-web4.netlify.app/)
+
+This project is a sophisticated reconstruction of the Paxos Gold (PAXG) crypto-asset platform, designed to replicate the clean and clinical aesthetic of modern fintech portals. It features intricate navigation systems, including multi-level mega-menus that simulate the complex information architecture found on institutional crypto sites. The interface is meticulously crafted to balance massive amounts of technical data with an intuitive user journey, incorporating mock verification tools and comprehensive resource centers. By focusing on pixel-perfect alignment and professional typography, this clone serves as an excellent case study in developing trust-oriented corporate web designs.
 
 ## 💰 Features
 

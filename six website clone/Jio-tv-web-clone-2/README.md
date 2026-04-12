@@ -1,6 +1,8 @@
 # JioTV - Mock Responsive Website Clone
 
-A responsive, content-rich web application clone of **JioTV**. This project focuses on building a modern streaming platform UI, featuring categorization for various entertainment genres like Sports, Kids, News, and Premium shows.
+🔗 **Live Demo**: [https://jiotv-web2-clone.netlify.app/](https://jiotv-web2-clone.netlify.app/)
+
+This project is a detailed reconstruction of the JioTV web interface, designed to showcase a modern, content-heavy media platform. It incorporates multiple specialized pages for various genres, including a kid-friendly environment and a high-energy sports page, demonstrating versatile UI design capabilities. The dark-themed interface is built with responsiveness in mind, ensuring that content tracks and navigation remain accessible across different screen sizes. By focusing on intricate elements like content carousels and genre-specific layouts, this clone serves as a robust example of enterprise-level media application UI development.
 
 ## 📺 Features
 
