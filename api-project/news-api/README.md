@@ -1,5 +1,8 @@
 # MyNews App
 
+**Live Demo:** [https://jilan-108623-apiproject.netlify.app/](https://jilan-108623-apiproject.netlify.app/)
+**Source Code:** [GitHub Repository](https://github.com/Jilanmansuri/Projects/tree/main/api-project/news-api)
+
 A simple and responsive news web application that fetches the latest news via a public News API. Users can browse today's top stories and use the search functionality to find news related to specific keywords.
 
 ## Features

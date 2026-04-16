@@ -1,5 +1,7 @@
 # GitHub User Finder
 
+**Live Demo:** [https://github-finder-7655.netlify.app/](https://github-finder-7655.netlify.app/)
+
 A web application that allows users to search for GitHub profiles and instantly view their details, statistics, and repositories. It connects to the public GitHub API to fetch and display user information dynamically.
 
 ## Features

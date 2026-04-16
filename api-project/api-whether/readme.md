@@ -1,5 +1,7 @@
 # Weather App
 
+**Live Demo:** [https://lucent-cascaron-a72951.netlify.app/](https://lucent-cascaron-a72951.netlify.app/)
+
 A lightweight weather application that allows users to check the current weather conditions for any given city.
 
 ## Features
