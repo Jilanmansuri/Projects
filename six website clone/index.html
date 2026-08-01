@@ -1,425 +1,272 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Advanced LeetCode Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Six Website Clones Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --accent-color: #3b82f6;
+            --accent-hover: #60a5fa;
+            --row-hover: rgba(255, 255, 255, 0.05);
+        }
 
-  <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
-    }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            padding: 2rem;
+            margin: 2rem auto;
+        }
 
-    body{
-      background:#020617;
-      color:white;
-      padding:30px;
-    }
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
 
-    .container{
-      max-width:1300px;
-      margin:auto;
-    }
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    h1{
-      text-align:center;
-      font-size:55px;
-      margin-bottom:35px;
-    }
+        .header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
 
-    .card-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:25px;
-      margin-bottom:40px;
-    }
+        .table-container {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1px; /* for inner border effect */
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
 
-    .card{
-      background:#1e293b;
-      padding:35px 20px;
-      border-radius:20px;
-      text-align:center;
-      transition:0.3s;
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
 
-    .card:hover{
-      transform:translateY(-5px);
-    }
+        th {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 1.25rem 1.5rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #94a3b8;
+            font-weight: 600;
+            border-bottom: 1px solid var(--card-border);
+        }
 
-    .card h2{
-      margin-bottom:15px;
-      font-size:28px;
-    }
+        td {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+        }
 
-    .card p{
-      font-size:45px;
-      font-weight:bold;
-    }
+        tr:last-child td {
+            border-bottom: none;
+        }
 
-    .easy{ color:#22c55e; }
-    .medium{ color:#facc15; }
-    .hard{ color:#ef4444; }
+        tbody tr {
+            transition: all 0.2s ease;
+        }
 
-    .section{
-      margin-top:30px;
-      background:#1e293b;
-      padding:30px;
-      border-radius:20px;
-    }
+        tbody tr:hover {
+            background-color: var(--row-hover);
+        }
 
-    .section h2{
-      margin-bottom:25px;
-      font-size:35px;
-    }
+        .project-name {
+            font-weight: 500;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-    .filters{
-      display:flex;
-      flex-wrap:wrap;
-      gap:15px;
-      margin-bottom:25px;
-    }
+        .project-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-hover);
+            font-weight: bold;
+        }
 
-    select{
-      padding:12px 18px;
-      border:none;
-      border-radius:10px;
-      font-size:16px;
-      background:#0f172a;
-      color:white;
-      outline:none;
-    }
+        .project-status {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: rgba(16, 185, 129, 0.1);
+            color: #34d399;
+        }
 
-    table{
-      width:100%;
-      border-collapse:collapse;
-    }
+        .action-link {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+        }
 
-    th{
-      background:#0f172a;
-      padding:18px;
-      text-align:left;
-      font-size:18px;
-    }
+        .action-link:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px -1px rgba(59, 130, 246, 0.4);
+        }
 
-    td{
-      padding:18px;
-      border-bottom:1px solid #334155;
-    }
+        /* Micro animation for load */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    tr:hover{
-      background:#334155;
-    }
-
-    a{
-      color:#60a5fa;
-      text-decoration:none;
-      font-weight:bold;
-    }
-
-    .tag{
-      padding:6px 12px;
-      border-radius:8px;
-      font-size:14px;
-      font-weight:bold;
-    }
-
-    .cpp{
-      background:#1d4ed8;
-    }
-
-    .js{
-      background:#ca8a04;
-    }
-
-    .both{
-      background:#16a34a;
-    }
-
-    .loading{
-      text-align:center;
-      margin-top:30px;
-      font-size:24px;
-    }
-
-  </style>
+        .container {
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <div class="container">
+        <div class="header">
+            <h1>Web Clones Directory</h1>
+            <p>Access all 6 of your website clones from this central dashboard.</p>
+        </div>
 
-  <h1>Advanced LeetCode Dashboard</h1>
-
-  <div class="card-grid">
-
-    <div class="card">
-      <h2>Total Solved</h2>
-      <p id="total">0</p>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Project Name</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <div class="project-name">
+                                <div class="project-icon">1</div>
+                                Barista Web Clone
+                            </div>
+                        </td>
+                        <td>Barista website clone</td>
+                        <td><span class="project-status">Ready</span></td>
+                        <td><a href="./Barista-web-clone-1/index.html" class="action-link" target="_blank">Open Project</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <div class="project-name">
+                                <div class="project-icon">2</div>
+                                Jio TV Web Clone
+                            </div>
+                        </td>
+                        <td>Jio TV website clone</td>
+                        <td><span class="project-status">Ready</span></td>
+                        <td><a href="./Jio-tv-web-clone-2/index.html" class="action-link" target="_blank">Open Project</a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <div class="project-name">
+                                <div class="project-icon">3</div>
+                                Dream Games Web Clone
+                            </div>
+                        </td>
+                        <td>Dream Games website clone</td>
+                        <td><span class="project-status">Ready</span></td>
+                        <td><a href="./Dream-games-web-clone-3/index.html" class="action-link" target="_blank">Open Project</a></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <div class="project-name">
+                                <div class="project-icon">4</div>
+                                Paxos Gold Web Clone
+                            </div>
+                        </td>
+                        <td>Paxos Gold website clone</td>
+                        <td><span class="project-status">Ready</span></td>
+                        <td><a href="./Paxos-gold-web-clone-4/index.html" class="action-link" target="_blank">Open Project</a></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            <div class="project-name">
+                                <div class="project-icon">5</div>
+                                Glean Web Clone
+                            </div>
+                        </td>
+                        <td>Glean website clone</td>
+                        <td><span class="project-status">Ready</span></td>
+                        <td><a href="./glean-web-clone-5/index.html" class="action-link" target="_blank">Open Project</a></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>
+                            <div class="project-name">
+                                <div class="project-icon">6</div>
+                                Cronos Web Clone
+                            </div>
+                        </td>
+                        <td>Cronos website clone</td>
+                        <td><span class="project-status">Ready</span></td>
+                        <td><a href="./Cronos-web-clone-6/index.html" class="action-link" target="_blank">Open Project</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-
-    <div class="card">
-      <h2>Easy</h2>
-      <p class="easy" id="easy">0</p>
-    </div>
-
-    <div class="card">
-      <h2>Medium</h2>
-      <p class="medium" id="medium">0</p>
-    </div>
-
-    <div class="card">
-      <h2>Hard</h2>
-      <p class="hard" id="hard">0</p>
-    </div>
-
-  </div>
-
-  <div class="section">
-
-    <h2>Language Filters</h2>
-
-    <div class="filters">
-
-      <select id="filterType">
-        <option value="all">All Problems</option>
-        <option value="cpp">Only C++</option>
-        <option value="js">Only JavaScript</option>
-        <option value="both">Solved In Both</option>
-        <option value="cppNotJs">C++ But Not JS</option>
-        <option value="jsNotCpp">JS But Not C++</option>
-      </select>
-
-    </div>
-
-    <table>
-
-      <thead>
-        <tr>
-          <th>Question</th>
-          <th>Languages Used</th>
-          <th>Total Submissions</th>
-        </tr>
-      </thead>
-
-      <tbody id="submissionTable"></tbody>
-
-    </table>
-
-  </div>
-
-  <div class="loading" id="loading">
-    Loading Data...
-  </div>
-
-</div>
-
-<script>
-
-const username = "jilan2410";
-
-let groupedProblems = [];
-
-async function fetchLeetCodeData(){
-
-  try{
-
-    const response = await fetch(
-      `https://leetcode-api-faisalshohag.vercel.app/${username}`
-    );
-
-    const data = await response.json();
-
-    document.getElementById("total").innerText = data.totalSolved;
-    document.getElementById("easy").innerText = data.easySolved;
-    document.getElementById("medium").innerText = data.mediumSolved;
-    document.getElementById("hard").innerText = data.hardSolved;
-
-    const submissions = data.recentSubmissions;
-
-    const map = {};
-
-    submissions.forEach(sub => {
-
-      if(!map[sub.title]){
-
-        map[sub.title] = {
-          title: sub.title,
-          titleSlug: sub.titleSlug,
-          languages: new Set(),
-          count: 0
-        };
-      }
-
-      map[sub.title].languages.add(sub.lang);
-      map[sub.title].count++;
-
-    });
-
-    groupedProblems = Object.values(map).map(item => ({
-      ...item,
-      languages: Array.from(item.languages)
-    }));
-
-    renderTable(groupedProblems);
-
-    document.getElementById("loading").style.display = "none";
-
-  }
-
-  catch(error){
-
-    console.log(error);
-
-    document.getElementById("loading").innerText =
-      "Failed To Load Data";
-
-  }
-
-}
-
-function renderTable(data){
-
-  const table = document.getElementById("submissionTable");
-
-  table.innerHTML = "";
-
-  data.forEach(problem => {
-
-    const row = document.createElement("tr");
-
-    let tags = "";
-
-    problem.languages.forEach(lang => {
-
-      if(lang.includes("C++")){
-        tags += `<span class="tag cpp">C++</span> `;
-      }
-
-      else if(lang.includes("JavaScript")){
-        tags += `<span class="tag js">JavaScript</span> `;
-      }
-
-      else{
-        tags += `<span class="tag both">${lang}</span> `;
-      }
-
-    });
-
-    row.innerHTML = `
-
-      <td>
-        <a
-          href="https://leetcode.com/problems/${problem.titleSlug}/"
-          target="_blank"
-        >
-          ${problem.title}
-        </a>
-      </td>
-
-      <td>${tags}</td>
-
-      <td>${problem.count}</td>
-
-    `;
-
-    table.appendChild(row);
-
-  });
-
-}
-
-function applyFilter(){
-
-  const filter = document.getElementById("filterType").value;
-
-  let filtered = [];
-
-  if(filter === "all"){
-    filtered = groupedProblems;
-  }
-
-  else if(filter === "cpp"){
-    filtered = groupedProblems.filter(problem =>
-      problem.languages.some(lang => lang.includes("C++"))
-    );
-  }
-
-  else if(filter === "js"){
-    filtered = groupedProblems.filter(problem =>
-      problem.languages.some(lang => lang.includes("JavaScript"))
-    );
-  }
-
-  else if(filter === "both"){
-    filtered = groupedProblems.filter(problem => {
-
-      const hasCpp = problem.languages.some(lang =>
-        lang.includes("C++")
-      );
-
-      const hasJs = problem.languages.some(lang =>
-        lang.includes("JavaScript")
-      );
-
-      return hasCpp && hasJs;
-
-    });
-  }
-
-  else if(filter === "cppNotJs"){
-
-    filtered = groupedProblems.filter(problem => {
-
-      const hasCpp = problem.languages.some(lang =>
-        lang.includes("C++")
-      );
-
-      const hasJs = problem.languages.some(lang =>
-        lang.includes("JavaScript")
-      );
-
-      return hasCpp && !hasJs;
-
-    });
-
-  }
-
-  else if(filter === "jsNotCpp"){
-
-    filtered = groupedProblems.filter(problem => {
-
-      const hasCpp = problem.languages.some(lang =>
-        lang.includes("C++")
-      );
-
-      const hasJs = problem.languages.some(lang =>
-        lang.includes("JavaScript")
-      );
-
-      return hasJs && !hasCpp;
-
-    });
-
-  }
-
-  renderTable(filtered);
-
-}
-
-
-document
-  .getElementById("filterType")
-  .addEventListener("change", applyFilter);
-
-fetchLeetCodeData();
-
-</script>
 
 </body>
 </html>
-
