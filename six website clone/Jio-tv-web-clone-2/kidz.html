@@ -489,6 +489,43 @@
 
         }
     </style>
+
+<style>
+/* Responsive Overrides by Agent */
+html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100vw;
+}
+* {
+    box-sizing: border-box;
+}
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+@media screen and (max-width: 768px) {
+    * {
+        max-width: 100vw !important;
+    }
+    .container, .wrapper, .row, header, footer, section {
+        flex-wrap: wrap !important;
+        height: auto !important;
+    }
+    .navbar, .nav-links, .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 1024px) {
+    * {
+        max-width: 100vw !important;
+    }
+    html, body {
+        overflow-x: hidden !important;
+    }
+}
+</style>
 </head>
 
 <body>
