@@ -7,6 +7,43 @@
     <title>JioTV - Mock Responsive</title>
     <link rel="stylesheet" href="style.css"/>  
  <link rel="icon" type="image/png" href="https://cdn6.aptoide.com/imgs/b/c/3/bc3124bbcbf3e95b8efe5df814fadab2_icon.png">
+
+<style>
+/* Responsive Overrides by Agent */
+html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100vw;
+}
+* {
+    box-sizing: border-box;
+}
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+@media screen and (max-width: 768px) {
+    * {
+        max-width: 100vw !important;
+    }
+    .container, .wrapper, .row, header, footer, section {
+        flex-wrap: wrap !important;
+        height: auto !important;
+    }
+    .navbar, .nav-links, .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 1024px) {
+    * {
+        max-width: 100vw !important;
+    }
+    html, body {
+        overflow-x: hidden !important;
+    }
+}
+</style>
 </head>
 
 <body>
